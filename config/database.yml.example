@@ -1,0 +1,17 @@
+default: &default
+  adapter: postgresql
+  encoding: utf-8
+  pool: 5
+  username: postgres
+  password: postgres
+
+development:
+  <<: *default
+  database: overl_games_development
+test:
+  <<: *default
+  database: overl_games_test
+
+production:
+  <<: *default
+  database: overl_games
