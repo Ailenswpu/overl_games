@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
   resources :posts
 
+  root "posts#index"
+
+  #temp_pages
+  get 'temp_pages/index' => "temp_pages#index"
+  get 'temp_pages/show' => "temp_pages#show"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

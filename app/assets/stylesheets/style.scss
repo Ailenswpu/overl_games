@@ -1,0 +1,163 @@
+
+body {
+        padding-top: 70px;
+        background: #e9edf0;
+     }
+.nav-game{
+	border-bottom: #34495e 2px solid;
+}
+
+.img-middle{
+	width: 40px;
+	height: 40px;
+}
+
+
+.top-avatar{
+	border-radius: 20px;
+}
+
+
+.share-circle{
+	width: 36px;
+	height: 36px;
+	padding: 10px;
+	text-align: center;
+/*	border-radius: 30px;
+	float: left;
+	color: #FFFFFF;
+	margin-right: 15px;
+	margin-bottom: 5px;*/
+	font-size: 30px;
+}
+
+/*.share-circle:hover{
+	background: #FFFFFF !important;
+	color: #34495e;
+}*/
+
+.introduction-brief{
+	width: 100%;
+	background: #ffffff;
+	background-size: 100%;
+	height: 303px;
+	text-align: center;
+	padding-right: 20px;
+	padding-top: 20px;
+	overflow: auto;
+	padding: 20px;
+}
+
+
+.introduction-box{
+	text-align: center;
+}
+
+
+.introduction-img{
+	/*line-height: 303px;*/
+	height: 303px;
+	color: #FFFFFF;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	text-align: center;
+	
+}
+
+
+
+.page{
+	margin-top: 20px;
+	min-height: 100px;
+	background: #FFFFFF;
+}
+
+.text-area{
+	padding: 20px;
+	font-family: "微软雅黑";
+}
+
+.rating-table{
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+}
+
+
+.rating-table tr{
+	border-top: 0px;
+	padding-bottom: 0px;
+}
+
+.rating-table tr th{
+	width: 100px;
+	text-align: right;
+	border-top: 0px !important;
+	padding-bottom: 0px;
+	font-size: 14px;
+}
+
+.rating-table tr td{
+	border-top: 0px !important;
+}
+
+.video{
+	width: 100%;
+	height: 304px;
+	background: #000;
+}
+
+.cusp{
+	border-radius: 0px !important;
+	font-family: "微软雅黑";
+}
+
+.black-bg{
+	background: #111;
+}
+
+.white-bg{
+	background: #FFFFFF;
+}
+
+.white-color{
+	color: #ffffff;
+}
+
+.text-center{
+	text-align: center;
+	font-family: "微软雅黑"；
+}
+
+
+
+.tran-bg{
+	background: none !important;
+	overflow: hidden;
+}
+
+.banner{
+	background:url(../img/pic/banner.jpg) no-repeat;
+	background-size: 100%;
+	padding: 20px;
+	width: 100%;
+	height: auto;
+	background: none;
+	/*background: #ffffff;*/
+}
+
+.home-floor{
+	margin-bottom: 20px;
+}
+
+.floot-title{
+	font-size: 14px;
+	text-align: center;
+	font-family: "微软雅黑";
+	border-bottom: #FFFFFF 2px dashed;
+	padding-bottom: 10px;
+	margin-bottom: 20px;
+}
+
+.fui-power:hover{
+	color: #e74c3c;
+}
