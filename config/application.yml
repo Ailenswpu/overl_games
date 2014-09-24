@@ -1,0 +1,17 @@
+defaults: &defaults
+  smtp:
+    sender: support@hashnest.com
+    address: email-smtp.us-west-2.amazonaws.com
+    port: 587
+    authentication: plain
+    username: AKIAIHWMSTZE4ZIHMYTQ
+    password: Ajw8x5mOThAcSDU/0E38pHWXHeK7zCIsOT0Wk0f7eZIO
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
