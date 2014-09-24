@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   validates_confirmation_of :password, on: :create
   
   before_create :encryptable
+  after_create :send_confirmation_email
   
   def password_salt
     SecureRandom.hex(16)
