@@ -1,0 +1,2 @@
+class TempPagesController < ApplicationController
+end
