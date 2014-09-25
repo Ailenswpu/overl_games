@@ -10,13 +10,6 @@ en:
       # html: '<abbr title="required">*</abbr>'
     error_notification:
       default_message: "Please review the problems below:"
-    activerecord:
-      errors:
-        models:
-          user:
-            attributes:
-              email:
-                taken: "Your email is exist."
     # Labels and hints examples
     # labels:
     #   defaults:
