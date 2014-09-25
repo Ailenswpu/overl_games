@@ -22,8 +22,7 @@ class User < ActiveRecord::Base
   end
   
   def reset_password password
-    self.encrypted_password = Bitmain.digest(password, self.password_salt)
-    self.source = 0
+    self.encrypted_password = PasswordUtils.digest(password, self.password_salt)
     self.save!
   end
 

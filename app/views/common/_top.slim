@@ -1,4 +1,3 @@
-/! Static navbar
 .navbar.navbar-default.navbar-fixed-top.nav-game role="navigation" 
   .container
     .navbar-header
@@ -31,24 +30,32 @@
       ul.nav.navbar-nav.navbar-right
         li.dropdown
           a.dropdown-toggle href="#" data-toggle="dropdown"
-            img.top-avatar height="22" src=(image_url 'icons/avatar.png') width="22" /
+            span.language En
           ul.dropdown-menu
             li
-              a href="#"  Action
+              a href="#"  简体中文
             li
-              a href="#"  Another action
-            li
-              a href="#"  Something else here
-            li.divider
-            li.dropdown-header Nav header
-            li
-              a href="#"  Separated link
-            li
-              a href="#"  One more separated link
-        li
-          a href="#" style="font-size:22px;"
-            span.fui-power
-        li
-          a href="#" style="font-size:20px;" 
-            | Sign in
+              a href="#"  English
+        - if current_user
+          li.dropdown
+            a.dropdown-toggle href="#" data-toggle="dropdown"
+              img.top-avatar height="22" src=(image_url 'icons/avatar.png') width="22" /
+            ul.dropdown-menu
+              li
+                a href="#"  Add Game
+              li
+              li.divider
+              li.dropdown-header User Center
+              li
+                a href="#"  Reset Password
+          li
+            a href="#" style="font-size:22px;"
+              span.fui-power
+        - unless current_user
+          li
+            a href="#" style="font-size:20px;" 
+              | Sign in
+          li
+            a href=new_registration_path style="font-size:20px;" 
+              | Sign up
     /! /.nav-collapse

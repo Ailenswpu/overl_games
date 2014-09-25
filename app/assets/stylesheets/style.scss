@@ -2,7 +2,15 @@
 body {
         padding-top: 70px;
         background: #e9edf0;
+        margin-bottom: 62px;
      }
+
+html{
+	position: relative;
+  	min-height: 100%;
+}
+
+
 .nav-game{
 	border-bottom: #34495e 2px solid;
 }
@@ -28,7 +36,7 @@ body {
 	color: #FFFFFF;
 	margin-right: 15px;
 	margin-bottom: 5px;*/
-	font-size: 30px;
+	font-size: 22px;
 }
 
 /*.share-circle:hover{
@@ -160,4 +168,22 @@ body {
 
 .fui-power:hover{
 	color: #e74c3c;
+}
+
+.label-language{
+	background: #34495e;
+	margin-top: 20px;
+	line-height: 22px;
+	border-radius: 10px;
+}
+
+.language{
+	font-size: 20px;
+	border-radius: 10px;
+	color: #FFFFFF;
+	background: #9aa4af;
+}
+
+.language:hover{
+	background: #34495e;
 }
