@@ -1,0 +1,28 @@
+zh-CN:
+  devise:
+    confirmation:
+      confirmation_file: 确认失败
+      confirmation_success: 确认成功
+      confirmation_token:
+        no_exist: 确认Token不正确
+    confirmations:
+      confirmed: "Your email address has been successfully confirmed."
+    passwords:
+      no_token: "You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided."
+      verify: 重置密码邮件验证成功
+      no_confirm: 两次密码输入不一致
+      too_short: is too short (minimum is 6 characters)
+      reset_successfuly: 密码重置成功
+      no_match: 密码输入不正确
+    mailer:
+      confirmation_instructions:
+        subject: "邮件激活"
+      reset_password_instructions:
+        subject: "重置密码"
+      unlock_instructions:
+        subject: "Unlock instructions"
+    errors:
+      messages:
+        already_confirmed: "was already confirmed, please try signing in"
+        confirmation_period_expired: "needs to be confirmed within %{period}, please request a new one"
+        expired: "has expired, please request a new one"

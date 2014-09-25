@@ -1,0 +1,38 @@
+zh-CN:
+  hello: "Hello world"
+  Phone:
+    phone_binding: 手机绑定
+    phone_number: 手机号码
+    code: 验证码
+    get_code: 发送验证码
+    binding: 绑定
+    unbinding: 解除绑定
+  subminting: 正在提交
+  errors:
+    mobile_incorrect_format: 手机号码格式不正确
+  un_activated: 未激活
+  un_setting: 未设置
+  activated: 激活
+  Google_authenticator:
+    google: 谷歌二次验证
+    secret_key: 你的密钥
+    verify: 绑定
+    unverify: 解除绑定
+    code: 验证码
+    notice: 请备份好您的密钥！取消谷歌验证需要输入验证码
+  security_question_submit:
+    un_activated: 解除
+    activated: 设定
+  google_auth:
+    verify_filed: 认证失败
+    un_activated: 解除认证
+    activated: 激活认证
+  change_talk_id:
+    empty: TalkID 不能为空
+    success: TalkID 设置成功
+
+  security_question:
+    errors:
+      answer: 答案不匹配
+    unlock: 解除认证
+    create_successfully: 激活认证

@@ -1,0 +1,13 @@
+zh-CN:
+    activerecord:
+      errors:
+        models:
+          user:
+            attributes:
+              email:
+                taken: "Your email already exists!"
+    reset_passowrd:
+      different_passowrd: "Input two different passwords!"
+      unknown_error: "Unknown errors!"
+
+
