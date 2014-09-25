@@ -1,4 +1,6 @@
 class RegistrationsController < ApplicationController
+  layout 'before_app'
+
   def new
     
   end 

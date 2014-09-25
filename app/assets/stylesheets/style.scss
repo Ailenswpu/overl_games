@@ -2,7 +2,15 @@
 body {
         padding-top: 70px;
         background: #e9edf0;
+        margin-bottom: 62px;
      }
+
+html{
+	position: relative;
+  	min-height: 100%;
+}
+
+
 .nav-game{
 	border-bottom: #34495e 2px solid;
 }
