@@ -33,3 +33,38 @@
 	background: #FFFFFF;
 	height: auto;
 }
+
+.nav-home{
+	 background: none;
+       a.navbar-brand{
+        color: #ddd;
+       }
+       
+      ul.nav{
+        .dropdown
+        {
+          b.caret{
+            border-top-color: #ddd;
+            border-bottom-color: #ddd;
+           }
+        }
+        li{
+          a{
+            color: #FFFFFF;
+          }
+          ul.dropdown-menu{
+            li{
+              a
+              {
+                color: #34495e;
+              }
+            }
+          }
+        }
+      }
+    }
+
+.nav-bg{
+  background: url('/assets/icons/jianbian.png') no-repeat;
+  background-size: cover;
+}

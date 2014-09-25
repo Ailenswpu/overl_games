@@ -1,33 +1,7 @@
-.home-ad-text 
-    h4.text-center OverlGames
-    p.text-center The more and better games.
-.home-top
-  img src=(image_url 'pic/example2.jpg')
+= render 'home/home_nav'
+= render 'home/home_top'
+= render 'home/home_center'
+= render 'common/footer'
 
 
-.home-center
-  .container
-    .row
-      h4.text-center Whar do you want to do ?
-    .row
-      .col-xs-12.col-sm-4.col-md-4.col-lg-4.text-center
-          img.tile-image alt="Pensils" src=(image_url 'icons/svg/pencils.svg')
-          p 
-            a.btn.btn-success href=new_session_path Sign In
-      .col-xs-12.col-sm-4.col-md-4.col-lg-4.text-center
-          img.tile-image alt="Pensils" src=(image_url 'icons/svg/pencils.svg')
-          p 
-            a.btn.btn-success href=new_registration_path Sign Up
-      .col-xs-12.col-sm-4.col-md-4.col-lg-4.text-center
-          img.tile-image alt="Pensils" src=(image_url 'icons/svg/pencils.svg')
-          p
-            a.btn.btn-success href=temp_pages_index_path View Games
-  
-
-
-.home-bottom style="padding-bottom:20px;"
-  .container
-    .row
-      .col-lg-12
-        h4.text-center What can you do on overlgames?
   
