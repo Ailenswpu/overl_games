@@ -1,11 +1,9 @@
-form role="form"
+= simple_form_for(@user, :validate => true,:html=> {:class=>"form-horizontal","role" =>"form"}, url: sessions_path) do |f|
   h4.text-center Sign in
   .form-group
-    input type="text" class="form-control"  placeholder="User name"
+    = f.input :email, auto_focus: true, type: 'email', class: 'form-control', placeholder: '请输入邮箱',label: false, input_html: {class: 'form-control'}
   .form-group
-    input type="email" class="form-control"  placeholder="Enter email"
-  .form-group
-    input type="password" class="form-control"  placeholder="Password"
+    = f.input :password, auto_focus: true, type: 'passwords', class: 'form-control', placeholder: '请输入密码',label: false, input_html: {class: 'form-control'}
   .form-group
     button.btn.btn-primary.btn-block type="submit" Sign In
 p
