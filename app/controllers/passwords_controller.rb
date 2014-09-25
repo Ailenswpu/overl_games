@@ -3,6 +3,10 @@ class PasswordsController < ApplicationController
     
   end
   
+  def update
+    
+  end
+  
   def validate_token
     
   end
