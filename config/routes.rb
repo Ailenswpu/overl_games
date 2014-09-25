@@ -1,12 +1,27 @@
 Rails.application.routes.draw do
-  resources :posts
 
-  root "posts#index"
+  resources :posts
+  
+  root "home#index"
 
   #temp_pages
   get 'temp_pages/index' => "temp_pages#index"
   get 'temp_pages/show' => "temp_pages#show"
-
+  
+  resources :registrations, only: [:new, :create, :confirmation] do
+    collection do
+      get 'confirmation'
+    end
+  end
+  
+  resources :passwords do
+    collection do
+      get 'validate_token'
+    end
+  end
+  
+  resources :users
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
