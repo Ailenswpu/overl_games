@@ -53,9 +53,10 @@
               span.fui-power
         - unless current_user
           li
-            a href=new_session_path style="font-size:20px;" 
-              | Sign in
-          li
-            a href=new_registration_path style="font-size:20px;" 
-              | Sign up
-    /! /.nav-collapse
+            a.dropdown-toggle href="#" data-toggle="dropdown" style="font-size:22px;"
+              span.fui-user
+            ul.dropdown-menu
+              li
+                a href=new_session_path  Sign in
+              li
+                a href=new_registration_path  Sign up
