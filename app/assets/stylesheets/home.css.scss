@@ -1,3 +1,35 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.home_body{
+	margin-bottom: 62px;
+}
+
+.home-top{
+	width: 100%;
+	img{
+		width: 100%;
+	}
+}
+
+.home-ad-text{
+	width: 100%;
+	height: auto;
+	text-align: center;
+	z-index: 10;
+	margin-top: 15%;
+	position: absolute;
+}
+
+.home-center{
+	background: #f8f8f8;
+	height: auto;
+	padding-top: 36px;
+	padding-bottom: 36px;
+}
+
+.home-bottom{
+	padding-top: 36px;
+	background: #FFFFFF;
+	height: auto;
+}
