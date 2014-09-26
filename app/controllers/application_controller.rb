@@ -19,11 +19,16 @@ class ApplicationController < ActionController::Base
   end
   
   def user_signed_in?
-    !!@current_user
+    !!current_user
   end
   
   def sign_in user
     session[:user_id] = user.id
     @current_user = user
+  end
+  
+  def log_out
+    session.delete(:user_id)
+    @current_user = nil
   end
 end
