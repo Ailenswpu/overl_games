@@ -13,18 +13,20 @@
     = f.input :password_confirmation, auto_focus: true, type: 'passwords', class: 'form-control', placeholder: '确认密码',label: false, input_html: {class: 'form-control'}
     .alert-info
   .form-group
-    button.btn.btn-primary.btn-block type="submit" 注册
-p.text-center
-  a href=new_session_path Sign in
-p.text-center ...or create an account with:
-div.text-center style="font-size:24px;"
-  a href="#"
+    button.btn.btn-inverse.btn-block type="submit" 注册
+p.text-center 
+  font ...or create an account with:
+  a.user-third-section href="#"
     span.fui-facebook
-  a href="#" style="margin-left:20px;"
+  a.user-third-section href="#"
     span.fui-twitter
-  a href="#" style="margin-left:20px;"
+  a.user-third-section href="#"
     span.fui-google-plus
-  a href="#" style="margin-left:20px;"
+  a.user-third-section href="#"
     span.fui-skype
+p
+  a href=root_path Home
+  a.pull-right href=new_session_path Sign In
+  
 
   

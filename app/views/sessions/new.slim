@@ -5,17 +5,19 @@
   .form-group
     = f.input :password, auto_focus: true, type: 'passwords', class: 'form-control', placeholder: '请输入密码',label: false, input_html: {class: 'form-control'}
   .form-group
-    button.btn.btn-primary.btn-block type="submit" Sign In
+    button.btn.btn-success.btn-block type="submit" Sign In
+p.text-center 
+  font ...or sign in with:
+  a.user-third-section href="#"
+    span.fui-facebook
+  a.user-third-section href="#"
+    span.fui-twitter
+  a.user-third-section href="#"
+    span.fui-google-plus
+  a.user-third-section href="#"
+    span.fui-skype
 p
   a href="#" Forget your password?
-  a.pull-right href=new_registration_path Sign up
-p.text-center ...or sign in with:
-div.text-center style="font-size:24px;"
-  a href="#"
-    span.fui-facebook
-  a href="#" style="margin-left:20px;"
-    span.fui-twitter
-  a href="#" style="margin-left:20px;"
-    span.fui-google-plus
-  a href="#" style="margin-left:20px;"
-    span.fui-skype
+  a.pull-right href=root_path Home
+  font.pull-right style="margin-right:20px;" |
+  a.pull-right style="margin-right:20px;" href=new_registration_path Sign up

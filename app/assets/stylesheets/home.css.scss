@@ -35,11 +35,12 @@
 }
 
 .nav-home{
-	 background: none;
+	 // background: none;
+     background: url('/assets/icons/jianbian.png') no-repeat;
+     background-size: cover;
        a.navbar-brand{
         color: #ddd;
        }
-       
       ul.nav{
         .dropdown
         {
@@ -64,7 +65,14 @@
       }
     }
 
-.nav-bg{
-  background: url('/assets/icons/jianbian.png') no-repeat;
-  background-size: cover;
+#home_top_nav{
+  height: 53px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  display: none;
+  background: #000;
+  opacity: 0.3;
+  // background: url('/assets/icons/jianbian.png') no-repeat;
+  // background-size: cover;
 }

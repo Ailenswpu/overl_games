@@ -1,5 +1,5 @@
 $(window).scroll ->
   if $(window).scrollTop() <= 0
-    $('#home_top_nav').removeClass('nav-bg')
+    $('#home_top_nav').fadeOut()
   else
-    $('#home_top_nav').addClass('nav-bg')
+    $('#home_top_nav').fadeIn()
