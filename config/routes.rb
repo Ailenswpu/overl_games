@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   resources :posts
   resources :sessions, only: [:new, :create]
   
-  root "home#index"
+  root "posts#index"
+
+  get 'home/index' => "home#index",as: "about"
 
   #temp_pages
   get 'temp_pages/index' => "temp_pages#index"
@@ -24,8 +26,10 @@ Rails.application.routes.draw do
   resources :passwords do
     collection do
       get 'validate_token'
+      get 'reset_password'
     end
   end
+
   
   resources :users
   
