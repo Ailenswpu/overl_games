@@ -28,6 +28,9 @@ GEM
       thread_safe (~> 0.1)
       tzinfo (~> 1.1)
     arel (5.0.1.20140414130214)
+    bootstrap-wysiwyg-rails (0.3.1)
+      actionpack (>= 3.1)
+      railties (>= 3.1)
     builder (3.2.2)
     celluloid (0.16.0)
       timers (~> 4.0.0)
@@ -165,6 +168,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bootstrap-wysiwyg-rails
   coffee-rails (~> 4.0.0)
   jbuilder (~> 2.0)
   jquery-rails

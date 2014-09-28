@@ -1,0 +1,37 @@
+.row
+  .col-lg-12
+    form.form-horizontal role="form" 
+      .form-group
+        .col-lg-2
+        .col-lg-10
+          h5 New Game
+      .form-group
+        label.col-lg-2.control-label  GameName
+        .col-lg-8
+          input.form-control style="max-width:400px;" type="text" 
+      .form-group
+        label.col-lg-2.control-label  Description
+        .col-lg-8
+          textarea.form-control type="text" 
+      .form-group
+        label.col-lg-2.control-label Icon
+        .col-lg-10
+          input type="file" 
+            p.help-block Only Support png.
+      .form-group
+        label.col-lg-2.control-label  Advertising Figure
+        .col-lg-10
+          input type="file" 
+            p.help-block Only Support jpg.
+      .form-group
+        label.col-lg-2.control-label Video
+        .col-lg-10
+          input type="file" 
+            p.help-block Only Support mp4.
+      .form-group
+        label.col-lg-2.control-label  Detail
+        .col-lg-8
+          #editor
+      .form-group
+        .col-lg-offset-2.col-lg-10
+          button.btn.btn-primary type="submit"  Submit

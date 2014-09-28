@@ -5,6 +5,10 @@
   .form-group
     = f.input :password, auto_focus: true, type: 'passwords', class: 'form-control', placeholder: '请输入密码',label: false, input_html: {class: 'form-control'}
   .form-group
+    label.checkbox for="checkbox3" 
+      input#checkbox3 data-toggle="checkbox" required="" type="checkbox" value="" 
+        | Remember me
+  .form-group
     button.btn.btn-success.btn-block type="submit" Sign In
 p.text-center 
   font ...or sign in with:
