@@ -1,4 +1,6 @@
 defaults: &defaults
+  app_name: OverlGames
+  app_host: overlgames.com
   smtp:
     sender: support@overlgames.com
     address: smtp.mandrillapp.com
