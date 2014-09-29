@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   resources :posts
   resources :sessions, only: [:new, :create]
   
+  get '/auth/:provider/callback', to: 'sessions#create'
+  
   root "posts#index"
 
   get 'home/index' => "home#index",as: "about"
