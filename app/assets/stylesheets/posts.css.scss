@@ -5,4 +5,19 @@
 .froala-element{
 	border-radius: 0 0 4px 4px;
 	background: #FFFFFF;
+	border:0px !important;
+	border-top:#ccc 1px solid  !important;
 }
+
+.froala-editor{
+	border:0px !important;
+	padding: 10px 10px 10px 0px !important;
+}
+.f-sep{
+	height: 25px !important;
+}
+.froala-editor button.fr-bttn,.froala-editor button.fr-trigger{
+	color: #34495e;
+}
+
+
