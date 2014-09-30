@@ -1,10 +1,4 @@
 GIT
-  remote: git://github.com/046569/qq.git
-  revision: 5a28d2ac082ca6f4e03e23f86e4b5889c2c9e81b
-  specs:
-    qq (0.2.1)
-
-GIT
   remote: git://github.com/capistrano/rbenv.git
   revision: 2332dba20ec1f8c8cb7a9cd38770d71f5c4bf5a9
   specs:
@@ -237,7 +231,6 @@ DEPENDENCIES
   omniauth-oauth2
   omniauth-qq
   pg
-  qq!
   rails (= 4.1.2)
   redis-namespace
   redis-rails
