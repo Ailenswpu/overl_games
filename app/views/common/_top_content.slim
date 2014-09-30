@@ -55,7 +55,22 @@
           a.dropdown-toggle href="#" data-toggle="dropdown" style="font-size:22px;"
             span.fui-user
           ul.dropdown-menu
+            li.divider
+            li.dropdown-header.text-center Platform
             li
-              a href=new_session_path  Sign in
+              a href="#"  
+                img src=(image_url 'third_section/facebook.png') width="15" heght="15" style="margin-right:10px;"
+                | Facebook
             li
-              a href=new_registration_path  Sign up
+              a href="#"  
+                img src=(image_url 'third_section/twitter.png') width="15" heght="15" style="margin-right:10px;"
+                | Twitter
+            li
+              a href="https://graph.qq.com/oauth2.0/authorize?response_type=code&client_id=101157953&redirect_uri=www.aabar.me/auth/qq_connect/callback&scope=get_user_info" 
+                img src=(image_url 'third_section/qq.png') width="15" heght="15" style="margin-right:10px;"
+                | QQ
+            li
+              a href="#"  
+                img src=(image_url 'third_section/sina.png') width="15" heght="15" style="margin-right:10px;"
+                | Sina
+            
