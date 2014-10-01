@@ -65,5 +65,68 @@
 .row style="margin-bottom:20px;"
   .col-lg-12
     .page
-      .text-area
-        | 评论集成
+      .text-area style="padding-top:5px;"
+        .row.comment-floor#comment.active
+          .col-lg-12
+            .comment-title
+              / a.pull-right href="#" 
+              /   | 432&nbsp;
+              /   span.fui-new
+              / a.pull-right href="#" 
+              /   | 432&nbsp;
+              /   span.fui-heart
+              a.pull-right href="#" 
+                | Share&nbsp;
+                span.fui-export
+              a.pull-right href="#" 
+                | Favarite&nbsp;
+                span.fui-star-2
+              font Give your opinion
+          .col-lg-12
+            .comment-input contentEditable="true"
+              p
+                br
+            .comment-control
+              font @tuoxiaozhong
+              / a.icon href="#"
+              /   span.fui-image
+              button.btn.btn-default.btn-post.pull-right Post by you
+        .row.comment-floor#comment_id
+          .col-xs-2.col-sm-1.col-md-1.col-lg-1.comment-left
+            img.comment-avatar src=(image_url 'third_section/qq.png')
+          .col-xs-10.col-sm-11.col-md-11.col-lg-11.comment-right#content_comment_id
+            .comment-content
+              p.tip
+                a href="#" tuoxiaozhong
+                | &nbsp;&nbsp;&nbsp;&nbsp;
+                font 3-th floor
+                | &nbsp;&nbsp;.&nbsp;&nbsp;
+                font 3 months ago
+                a.pull-right data-comment="comment_id" data-user="user_id" href="#"
+                  span.fui-bubble
+              p fdsafdsafjkldsjaf;ldjsalkfjdslkafjdsafsaddsafdsafjkldsjaf;ldjsalkfjdslkafjdsafsaddsafdsafjkldsjaf;ldjsalkfjdslkafjdsafsaddsafdsafjkldsjaf;ldjsalkfjdslkafjdsafsad
+            .row.comment-floor
+              .col-xs-2.col-sm-1.col-md-1.col-lg-1.comment-left
+                img.comment-avatar src=(image_url 'third_section/qq.png')
+              .col-xs-10.col-sm-11.col-md-11.col-lg-11.comment-right
+                .comment-content
+                  p.tip
+                    a href="#" tuoxiaozhong
+                    a href="#" #tuoxiaozhong
+                    | &nbsp;&nbsp;&nbsp;&nbsp;
+                    font 3 months ago
+                    a.pull-right data-comment="comment_id" data-user="user_id" href="#"
+                      span.fui-bubble
+                  p testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest
+            .row.comment-floor#current_reply
+              .col-xs-2.col-sm-1.col-md-1.col-lg-1.comment-left
+                img.comment-avatar src=(image_url 'third_section/qq.png')
+              .col-xs-10.col-sm-11.col-md-11.col-lg-11.comment-right
+                .comment-input contentEditable="true"
+                  p
+                    br
+                .comment-control
+                  font @tuoxiaozhong
+                  button.btn.btn-default.btn-post.pull-right Post by you
+
+        
