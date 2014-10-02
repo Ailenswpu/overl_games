@@ -38,7 +38,7 @@
       - if current_user
         li.dropdown
           a.dropdown-toggle href="#" data-toggle="dropdown"
-            img.top-avatar height="22" src=(image_url 'icons/avatar.png') width="22" /
+            img.top-avatar height="22" src=(image_url current_user.avatar) width="22" /
           ul.dropdown-menu
             li
               a href=new_post_path  Add Game
@@ -48,7 +48,7 @@
             li
               a href=reset_password_passwords_path target="_blank"  Reset Password
         li
-          a href="#" style="font-size:22px;"
+          a href="sessions/1" style="font-size:22px;" data-method="delete"
             span.fui-power
       - unless current_user
         li
