@@ -7,3 +7,6 @@ $(function() {
         	placeholder: "Game Detail"
         })
     });
+
+
+

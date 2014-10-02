@@ -1,12 +1,4 @@
 
-#comment{
-	display: none;
-}
-
-#comment.active{
-	display: block;
-}
-
 .comment-right{
 	padding-left: 0px;
 }
@@ -44,11 +36,6 @@
 	overflow: hidden;
 	button{
 		border-radius: 0px;
-		background: #cbd2d6 !important;
-	}
-
-	button:hover{
-		background: #34495e !important;
 	}
 	a.icon{
 		color: #cbd2d6;
@@ -60,7 +47,7 @@
 	}
 	font{
 		font-size: 14px;
-		color: #cbd2d6;
+		color: #34495e;
 		margin-left: 5px;
 		line-height: 40px;
 	}
@@ -77,12 +64,14 @@
 		height: auto;
 		margin: 0px;
 		padding: 0px;
-		
 	}
 	p.tip{
 			font-size: 14px;
 			font{
 				color: #cbd2d6;
+			}
+			a{
+				cursor: pointer;
 			}
 	}
 	a{
