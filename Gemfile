@@ -38,6 +38,8 @@ gem 'sidetiq'
 gem 'sidekiq_mailer'
 gem 'slim'
 gem 'simple_form'
+gem "paperclip", "~> 4.2"
+gem 'mini_magick'
 # Add this if you're using rbenv
 gem 'capistrano-rbenv', github: "capistrano/rbenv"
 gem 'capistrano', '~> 3.2.1'
@@ -46,6 +48,7 @@ gem 'capistrano-rails', '~> 1.1.1'
 
 gem 'omniauth-oauth2'
 gem 'omniauth-qq'
+gem 'omniauth-weibo-oauth2'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
