@@ -66,7 +66,7 @@ displayComment = (jsonStr) ->
     
 
 new_reply_form =  ->
-  user_avatar = $("img[data-user-avatar]").data("user-avatar")
+  user_avatar = $("#comment").data("user-avatar")
   comment_id = $(this).data("comment-id")
   user_id = $(this).data("user-id")
   user_name = $(this).data("user-name")
@@ -117,13 +117,13 @@ new_reply_content = (jsonStr)  ->
         <div class='comment-content'>
           <p class='tip'>
             <font>"+data.user_name+"</font>
-            <font>3 months ago</font>
-            <a class='pull-right' data-comment-id='"+data.comment_id+"' data-user-id='"+data.user_id+"'>
-              <span class='fui-bubble'></span>
-                </a>
+            <font>"+data.created_at+"</font>
                 </p>
                 <p>
                 "+data.content+"
                 </p></div></div></div>"
+    #<a class='pull-right' data-comment-id='"+data.comment_id+"' data-user-id='"+data.user_id+"' data-user-name='"+data.user_name+"'>
+    #<span class='fui-bubble'></span>
+    #</a>
     $("div[data-content-comment= '"+data.comment_id+"']").append(html_str)
     $("div[data-current_reply]").remove()
