@@ -1,9 +1,9 @@
 = simple_form_for(@user, :validate => true,:html=> {:class=>"form-horizontal","role" =>"form"}, url: sessions_path) do |f|
   h4.text-center Sign in
   .form-group
-    = f.input :email, auto_focus: true, type: 'email', class: 'form-control', placeholder: '请输入邮箱',label: false, input_html: {class: 'form-control'}
+    / = f.input :email, auto_focus: true, type: 'email', class: 'form-control', placeholder: '请输入邮箱',label: false, input_html: {class: 'form-control'}
   .form-group
-    = f.input :password, auto_focus: true, type: 'passwords', class: 'form-control', placeholder: '请输入密码',label: false, input_html: {class: 'form-control'}
+    / = f.input :password, auto_focus: true, type: 'passwords', class: 'form-control', placeholder: '请输入密码',label: false, input_html: {class: 'form-control'}
   .form-group
     label.checkbox for="checkbox3" 
       input#checkbox3 data-toggle="checkbox" required="" type="checkbox" value="" 

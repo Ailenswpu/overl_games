@@ -2,6 +2,12 @@ Rails.application.routes.draw do
   
   
   resources :posts
+  get '/modal_show/:id', to: 'posts#modal_show'
+
+  resources :comments
+
+  resources :replies
+
   resources :sessions
   
   get '/auth/:provider/callback', to: 'sessions#create'

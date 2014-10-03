@@ -1,0 +1,32 @@
+= simple_form_for(@post, :validate => true,:html=> { multipart: true, class: "form-horizontal", role: "form" }) do |f|
+  .form-group
+    .col-lg-2
+    .col-lg-10
+      h5 添加游戏
+  .form-group
+    label.col-lg-2.control-label  游戏图标
+    .col-lg-8
+      = f.input :icon, as: :file, label: false
+  .form-group
+    label.col-lg-2.control-label  游戏类别
+    .col-lg-2
+      = f.input :category, as: :select, label: false, collection: @categories
+  .form-group
+    label.col-lg-2.control-label  游戏发布平台
+    .col-lg-2
+      = f.input :platform, as: :select, label: false, collection: Post::PLATFORM
+  .form-group
+    label.col-lg-2.control-label  游戏名称
+    .col-lg-8
+      = f.input :title, label: false,style: "max-width:40px;", type: "text", input_html: {class: 'form-control'}
+  .form-group
+    label.col-lg-2.control-label  游戏链接
+    .col-lg-8
+      = f.input :url, label: false,style: "max-width:40px;", type: "text", input_html: {class: 'form-control'}
+  .form-group
+    label.col-lg-2.control-label  游戏简介
+    .col-lg-8
+      = f.input :description, label: false, style: "max-width:40px;", type: "text", input_html: {class: 'form-control'}
+  .form-group
+    .col-lg-offset-2.col-lg-10
+      button.btn.btn-primary type="submit"  提交
