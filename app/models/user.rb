@@ -1,6 +1,10 @@
 class User < ActiveRecord::Base
   validates_presence_of :provider, :uid, :name, :oauth_token, :oauth_expires_at
   
+  has_many :posts
+  has_many :comments, through: :posts
+  has_many :commenters, through: :comments
+
   def self.from_omniauth(auth)
     where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
       user.provider = auth.provider

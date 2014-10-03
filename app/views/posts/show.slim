@@ -75,24 +75,25 @@
                 span.fui-star-2
               font Give your opinion
           .col-lg-12
-            .comment-input#comment-content contentEditable="true" 
+            .comment-input#comment_content contentEditable="true" 
             .comment-control
               font#comment-tip @tuoxiaozhong
               button.btn.btn-inverse.btn-post.pull-right#submit-comment  Submit Comment
-        / .row.comment-floor
-        /   .col-xs-2.col-sm-1.col-md-1.col-lg-1.comment-left
-        /     img.comment-avatar src=(image_url 'third_section/qq.png')
-        /   .col-xs-10.col-sm-11.col-md-11.col-lg-11.comment-right data-content-comment="1"
-        /     .comment-content
-        /       p.tip
-        /         font tuoxiaozhong
-        /         | &nbsp;&nbsp;&nbsp;&nbsp;
-        /         font 3-th floor
-        /         | &nbsp;&nbsp;.&nbsp;&nbsp;
-        /         font 3 months ago
-        /         a.pull-right data-comment-id="1" data-user-id="1"
-        /           span.fui-bubble
-        /       p fdsafdsafjkldsjaf;ldjsalkfjdslkafjdsafsaddsafdsafjkldsjaf;ldjsalkfjdslkafjdsafsaddsafdsafjkldsjaf;ldjsalkfjdslkafjdsafsaddsafdsafjkldsjaf;ldjsalkfjdslkafjdsafsad
+        - @post.comments.each do |comment|
+          .row.comment-floor
+            .col-xs-2.col-sm-1.col-md-1.col-lg-1.comment-left
+              img.comment-avatar src=(image_url 'third_section/qq.png')
+            .col-xs-10.col-sm-11.col-md-11.col-lg-11.comment-right data-content-comment=(comment.id)
+              .comment-content
+                p.tip
+                  font = comment.try(:commenter)
+                  | &nbsp;&nbsp;&nbsp;&nbsp;
+                  font 3-th floor
+                  | &nbsp;&nbsp;.&nbsp;&nbsp;
+                  font 3 months ago
+                  a.pull-right data-comment-id=(comment.id) data-user-id="1"
+                    span.fui-bubble
+                p = comment.content
         /     .row.comment-floor
         /       .col-xs-2.col-sm-1.col-md-1.col-lg-1.comment-left
         /         img.comment-avatar src=(image_url 'third_section/qq.png')
