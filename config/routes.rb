@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   
   
-  resources :posts
+  resources :posts 
+
+  resources :comments
+
   resources :sessions
   
   get '/auth/:provider/callback', to: 'sessions#create'
