@@ -1,6 +1,6 @@
 $ ->
   $(document).on "click","a[data-comment-id]",new_reply_form
-  $(document).on "click","button[data-current_submit]",new_reply_content
+  $(document).on "click","button[data-current_submit]",submit_reply
   $(document).on "click","#submit-comment",submit_comment
 
   #key ctrl+enter
@@ -11,39 +11,9 @@ $ ->
       if control_id == "comment_content"
         submit_comment()
       else if control_id == "current_reply_content"
-        new_reply_content()
+        submit_reply()
       
 
-
-new_reply_content =  ->
-    text = $("div#current_reply_content").html()
-    if text == ""
-      $("#current_tip").html("Couldn't be Null")
-      return false
-    else
-      comment_id = $("button#current_button").data("comment-id")
-      user_id =$("button#current_button").data("user-id")
-      html_str = "
-      <div class='row comment-floor'>
-        <div class='col-xs-2 col-sm-1 col-md-1 col-lg-1 comment-left'>
-          <img class='comment-avatar' src='http://www.aabar.me/assets/third_section/qq.png'>
-            </div>
-        <div class='col-xs-10 col-sm-11 col-md-11 col-lg-11 comment-right'>
-          <div class='comment-content'>
-            <p class='tip'>
-              <font>tuoxiaozhong</font>
-              <font>#"+user_id+"</font>&nbsp;&nbsp;&nbsp;&nbsp;
-              <font>3 months ago</font>
-              <a class='pull-right' data-comment-id='"+comment_id+"' data-user-id='"+user_id+"'>
-                <span class='fui-bubble'></span>
-                  </a>
-                  </p>
-                  <p>
-                  "+text+"
-                  </p></div></div></div>"
-      $("div[data-content-comment= '"+comment_id+"']").append(html_str)
-      $("div[data-current_reply]").remove()
-      return true
 
 submit_comment =  ->
   text = $("#comment_content").html()
@@ -54,32 +24,16 @@ submit_comment =  ->
     sendComment(text)
     return true
 
-new_reply_form =  ->
-  comment_id = $(this).data("comment-id")
-  user_id = $(this).data("user-id")
-  $("div[data-current_reply]").remove()
-  html_str = "
-    <div class='row comment-floor' data-current_reply='current_reply'>
-    <div class='col-xs-2 col-sm-1 col-md-1 col-lg-1 comment-left'>
-      <img class='comment-avatar' src='"+getUserAvatar(user_id)+"'>
-    </div>
-    <div class='col-xs-10 col-sm-11 col-md-11 col-lg-11 comment-right'>
-        <div class='comment-input' contenteditable='true' id='current_reply_content'></div>
-          <div class='comment-control'>
-            <font id='current_tip'>@"+getUserName(user_id)+"</font>
-            <button class='btn btn-inverse btn-post pull-right' id='current_button' data-current_submit='current_submit' data-comment-id='"+comment_id+"' data-user-id='"+user_id+"'>Reply</button>
-              </div></div></div>"
-  $("div[data-content-comment= '"+comment_id+"']").append(html_str)
-
-
 sendComment = (text) ->
+  post_id = $("#comment").data("post-id")
+  user_id = $("#comment").data("user-id")
   $.ajax
     url: "/comments"
-    data: {comment:{content:text,post_id:"1",commenter:"1"}}
+    data: {comment:{content:text,post_id:post_id,user_id:user_id}}
     type: 'POST'  
     dataType: 'html'  
     error: (jqXHR, textStatus, errorThrown) ->  
-        $("#comment-tip").html("AJAX Error:#{textStatus}") 
+        $("#comment-tip").html("error") 
     success: (data, textStatus, jqXHR) -> 
         displayComment("#{data}")
 
@@ -90,15 +44,14 @@ displayComment = (jsonStr) ->
   html_str = "
       <div class='row comment-floor'>
         <div class='col-xs-2 col-sm-1 col-md-1 col-lg-1 comment-left'>
-          <img class='comment-avatar' src='"+user_avatar+"'>
+          <img class='comment-avatar' src='"+data.user_avatar+"'>
             </div>
             <div class='col-xs-10 col-sm-11 col-md-11 col-lg-11 comment-right' data-content-comment='"+data.id+"'>
               <div class='comment-content'>
                 <p class='tip'>
-                  <font>"+data.commenter+"</font>&nbsp;&nbsp;&nbsp;&nbsp;
-                  <font>3-th floor</font>&nbsp;&nbsp;.&nbsp;&nbsp;
-                  <font>Just now</font>
-                  <a class='pull-right' data-comment-id='"+data.id+"' data-user-id='"+data.commenter+"'>
+                  <font>"+data.user_name+"</font>&nbsp;&nbsp;&nbsp;&nbsp;
+                  <font>"+data.created_at+"</font>
+                  <a class='pull-right' data-comment-id='"+data.id+"' data-user-name='"+data.user_name+"'>
                     <span class='fui-bubble'></span>
                       </a>
                   </p>
@@ -112,9 +65,65 @@ displayComment = (jsonStr) ->
   $("#comment_content").html("")
     
 
-getUserName = (user_id) ->
-  return "user_name"
+new_reply_form =  ->
+  user_avatar = $("img[data-user-avatar]").data("user-avatar")
+  comment_id = $(this).data("comment-id")
+  user_id = $(this).data("user-id")
+  user_name = $(this).data("user-name")
+  $("div[data-current_reply]").remove()
+  html_str = "
+    <div class='row comment-floor' data-current_reply='current_reply'>
+    <div class='col-xs-2 col-sm-1 col-md-1 col-lg-1 comment-left'>
+      <img class='comment-avatar' src='"+user_avatar+"'>
+    </div>
+    <div class='col-xs-10 col-sm-11 col-md-11 col-lg-11 comment-right'>
+        <div class='comment-input' contenteditable='true' id='current_reply_content'></div>
+          <div class='comment-control'>
+            <font id='current_tip'>@"+user_name+"</font>
+            <button class='btn btn-inverse btn-post pull-right' id='current_button' data-current_submit='current_submit' data-comment-id='"+comment_id+"' data-user-id='"+user_id+"'>Reply</button>
+              </div></div></div>"
+  $("div[data-content-comment= '"+comment_id+"']").append(html_str)
 
-getUserAvatar = (user_id) ->
-  return "http://www.aabar.me/assets/third_section/qq.png"
 
+submit_reply = ->
+  text = $("div#current_reply_content").html()
+  if text == ""
+    $("#current_tip").html("Couldn't be Null")
+    return false
+  else
+    send_reply(text)
+    return true
+
+send_reply = (text) ->
+  comment_id = $("button#current_button").data("comment-id")
+  $.ajax
+    url: "/replies"
+    data: {reply:{content:text,comment_id:comment_id}}
+    type: 'POST'  
+    dataType: 'html'  
+    error: (jqXHR, textStatus, errorThrown) ->  
+        $("#current_tip").html("error") 
+    success: (data, textStatus, jqXHR) -> 
+        new_reply_content("#{data}")
+
+new_reply_content = (jsonStr)  ->
+    data = jQuery.parseJSON(jsonStr)
+    html_str = "
+    <div class='row comment-floor'>
+      <div class='col-xs-2 col-sm-1 col-md-1 col-lg-1 comment-left'>
+        <img class='comment-avatar' src='"+data.user_avatar+"'>
+          </div>
+      <div class='col-xs-10 col-sm-11 col-md-11 col-lg-11 comment-right'>
+        <div class='comment-content'>
+          <p class='tip'>
+            <font>"+data.user_name+"</font>
+            <font>3 months ago</font>
+            <a class='pull-right' data-comment-id='"+data.comment_id+"' data-user-id='"+data.user_id+"'>
+              <span class='fui-bubble'></span>
+                </a>
+                </p>
+                <p>
+                "+data.content+"
+                </p></div></div></div>"
+    $("div[data-content-comment= '"+data.comment_id+"']").append(html_str)
+    $("div[data-current_reply]").remove()

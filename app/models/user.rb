@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   validates_presence_of :provider, :uid, :name, :oauth_token, :oauth_expires_at
   
   has_many :posts
+  has_many :replies
   has_many :comments
 
   def self.from_omniauth(auth)

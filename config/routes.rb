@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   resources :comments
 
+  resources :replies
+
   resources :sessions
   
   get '/auth/:provider/callback', to: 'sessions#create'

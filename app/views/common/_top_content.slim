@@ -38,17 +38,17 @@
       - if current_user
         li.dropdown
           a.dropdown-toggle href="#" data-toggle="dropdown"
-            img.top-avatar height="22" src=(image_url current_user.avatar) width="22" /
+            img.top-avatar height="22" data-user-avatar=(image_url current_user.avatar) data-user-name=(image_url current_user.name) src=(image_url current_user.avatar) width="22" /
           ul.dropdown-menu
             li
               a href=new_post_path
                 span.fui-plus
                 | &nbsp;&nbsp;New Post
-            li
+            / li
             / li.divider
             / li.dropdown-header User Center
             li
-              a href="sessions/1"  data-method="delete"
+              a href="/sessions/1"  data-method="delete"
                 span.fui-power
                 | &nbsp;&nbsp;Logout
             
