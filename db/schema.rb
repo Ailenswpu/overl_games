@@ -11,10 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+ActiveRecord::Schema.define(version: 20141003110647) do
 
-
-ActiveRecord::Schema.define(version: 20141003074929) do
+  # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "categories", force: true do |t|
+    t.string   "name",       null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "comments", force: true do |t|
     t.text     "content"
@@ -37,8 +43,11 @@ ActiveRecord::Schema.define(version: 20141003074929) do
     t.string   "icon_content_type"
     t.integer  "icon_file_size"
     t.datetime "icon_updated_at"
-    t.integer  "user_id",           null: false
-    t.integer  "category",          null: false
+    t.integer  "user_id",                           null: false
+    t.integer  "category",                          null: false
+    t.string   "platform",          default: "iOS", null: false
+    t.integer  "visit",             default: 0
+    t.integer  "vote",              default: 0
   end
 
   create_table "replies", force: true do |t|

@@ -10,7 +10,11 @@
   .form-group
     label.col-lg-2.control-label  游戏类别
     .col-lg-2
-      = f.input :category, as: :select, label: false, collection: Post.categories.keys.to_a
+      = f.input :category, as: :select, label: false, collection: @categories
+  .form-group
+    label.col-lg-2.control-label  游戏发布平台
+    .col-lg-2
+      = f.input :platform, as: :select, label: false, collection: Post::PLATFORM
   .form-group
     label.col-lg-2.control-label  游戏名称
     .col-lg-8

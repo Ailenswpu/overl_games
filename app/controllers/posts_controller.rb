@@ -14,6 +14,7 @@ class PostsController < ApplicationController
 
   # GET /posts/new
   def new
+    @categories = Category.all.map {|c| [c.name, c.id]}
     @post = Post.new
   end
 
@@ -69,6 +70,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :url, :description, :icon, :category)
+      params.require(:post).permit(:title, :url, :description, :icon, :category, :platform)
     end
 end
