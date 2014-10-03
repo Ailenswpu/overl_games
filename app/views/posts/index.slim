@@ -22,7 +22,7 @@
          a href=post_path(post)
           .col-xs-12.col-sm-6.col-md-4.col-lg-3
             .tile
-              img.tile-image alt=post.title src=(image_url 'icons/svg/pencils.svg')
+              img.tile-image alt=post.title src=(image_url post.icon.url(:medium))
                 h3.tile-title = post.title
                 p = post.description
 #20140912.row.home-floor
