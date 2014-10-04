@@ -7,7 +7,7 @@ class PostsController < ApplicationController
   def index
     @posts = Post.all
   end
-
+  
   def modal_show
     @post = Post.find(params[:id])
   end
