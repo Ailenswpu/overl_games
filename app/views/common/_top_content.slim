@@ -41,15 +41,17 @@
             img.top-avatar height="22" src=(image_url current_user.avatar) width="22" /
           ul.dropdown-menu
             li
-              a href=new_post_path  Add Game
+              a href=new_post_path
+                span.fui-plus
+                | &nbsp;&nbsp;New Post
+            / li
+            / li.divider
+            / li.dropdown-header User Center
             li
-            li.divider
-            li.dropdown-header User Center
-            li
-              a href=reset_password_passwords_path target="_blank"  Reset Password
-        li
-          a href="sessions/1" style="font-size:22px;" data-method="delete"
-            span.fui-power
+              a href="/sessions/1"  data-method="delete"
+                span.fui-power
+                | &nbsp;&nbsp;Logout
+            
       - unless current_user
         li
           a.dropdown-toggle href="#" data-toggle="dropdown" style="font-size:22px;"

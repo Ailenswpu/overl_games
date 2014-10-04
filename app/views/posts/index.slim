@@ -1,3 +1,4 @@
+
 .row
   .col-lg-12
     .banner
@@ -18,16 +19,28 @@
   p.floot-title -&nbsp;&nbsp;Today&nbsp;&nbsp;-
   .col-lg-12
     .row
-      - @posts.each do |post|
-         a href=post_path(post)
-          .col-xs-12.col-sm-6.col-md-4.col-lg-3
-            .tile
-              img.tile-image alt=post.title src=(image_url 'icons/svg/pencils.svg')
-                h3.tile-title = post.title
-                p = post.description
+      - @posts.order("created_at desc").each do |post|
+        .col-xs-12.col-sm-6.col-md-4.col-lg-3.post-box
+            .tile.post-index 
+              h6 = post.title
+              p = post.description
+              img.tile-image alt=post.title src=(image_url post.icon.url(:medium)) data-postmodal-id=(post.id)
+              .over-post-index
+                a  title="View"
+                  span.fui-eye data-postmodal-id=(post.id)
+                a href=post_path(post) target="_blank" style="margin-left:15px;" title="Show"
+                  span.fui-resize
+                a href="#" style="margin-left:15px;" title="Chan"
+                  span.fui-star-2
+                a href="#" style="margin-left:15px;" title="Share"
+                  span.fui-export
+              .over-post-tag
+                span 街机游戏
 #20140912.row.home-floor
   .text-center
     a#20140912.btn.btn-primary href="#"  2014-09-24&nbsp;&nbsp;&nbsp;&darr;
 #20140912.row.home-floor
   h5.text-center
     | END
+#post-frame-bg
+iframe#post-frame name="framename"

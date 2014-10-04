@@ -1,19 +1,20 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-
+  skip_before_action :authenticate_user!, only: [:modal_show]
+  layout 'modal' ,only: [:modal_show]
   # GET /posts
   # GET /posts.json
   def index
     @posts = Post.all
   end
 
-  # GET /posts/1
-  # GET /posts/1.json
-  def show
+  def modal_show
+    @post = Post.find(params[:id])
   end
 
   # GET /posts/new
   def new
+    @categories = Category.all.map {|c| [c.name, c.id]}
     @post = Post.new
   end
 
@@ -25,7 +26,7 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(post_params)
-
+    @post.user = current_user
     respond_to do |format|
       if @post.save
         format.html { redirect_to @post, notice: 'Post was successfully created.' }
@@ -69,6 +70,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :url, :description)
+      params.require(:post).permit(:title, :url, :description, :icon, :category, :platform)
     end
 end
