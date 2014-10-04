@@ -8,41 +8,41 @@
           .introduction-brief
             h4 = @post.title
             p = @post.description
-.row
-  .col-lg-12
-    div style="background:#FFFFFF;" 
-      .row
-        .col-xs-12.col-sm-12.col-md-6.col-lg-6
-          .introduction-brief
-            h4.text-center
-              | Rating
-              a href="#" style="font-size:16px;margin-left:20px;"
-                span.fui-new
-            table.table.rating-table style="margin-top:20px;" 
-              tr
-                th 创意
-                td
-                  .progress
-                    .progress-bar style=("width: 40%;") 
-              tr
-                th 美术
-                td
-                  .progress
-                    .progress-bar style=("width: 40%;") 
-              tr
-                th 操作性
-                td
-                  .progress
-                    .progress-bar style=("width: 40%;") 
-              tr
-                th 综合
-                td
-                  .progress
-                    .progress-bar style=("width: 40%;") 
-        .col-xs-12.col-sm-12.col-md-6.col-lg-6
-          video.video controls="" poster=(image_url 'pic/app.jpg') preload="" 
-            source src="http://iurevych.github.com/Flat-UI-videos/big_buck_bunny.mp4" type="video/mp4" 
-              source src="http://iurevych.github.com/Flat-UI-videos/big_buck_bunny.webm" type="video/webm" 
+/ .row
+/   .col-lg-12
+/     div style="background:#FFFFFF;" 
+/       .row
+/         .col-xs-12.col-sm-12.col-md-6.col-lg-6
+/           .introduction-brief
+/             h4.text-center
+/               | Rating
+/               a href="#" style="font-size:16px;margin-left:20px;"
+/                 span.fui-new
+/             table.table.rating-table style="margin-top:20px;" 
+/               tr
+/                 th 创意
+/                 td
+/                   .progress
+/                     .progress-bar style=("width: 40%;") 
+/               tr
+/                 th 美术
+/                 td
+/                   .progress
+/                     .progress-bar style=("width: 40%;") 
+/               tr
+/                 th 操作性
+/                 td
+/                   .progress
+/                     .progress-bar style=("width: 40%;") 
+/               tr
+/                 th 综合
+/                 td
+/                   .progress
+/                     .progress-bar style=("width: 40%;") 
+/         .col-xs-12.col-sm-12.col-md-6.col-lg-6
+/           video.video controls="" poster=(image_url 'pic/app.jpg') preload="" 
+/             source src="http://iurevych.github.com/Flat-UI-videos/big_buck_bunny.mp4" type="video/mp4" 
+/               source src="http://iurevych.github.com/Flat-UI-videos/big_buck_bunny.webm" type="video/webm" 
 .row style="margin-top:20px;" 
   .col-lg-12
     .btn-group.btn-group-justified
@@ -77,6 +77,10 @@
                 a.pull-right href="#" 
                   | Favarite&nbsp;
                   span.fui-star-2
+                a.pull-right style="color:#7F8C8D;"
+                  = @post.comments.count
+                  | &nbsp;&nbsp;&nbsp;Comments&nbsp;&nbsp;
+                  span.fui-new
                 font Give your opinion
             .col-lg-12
               .comment-input#comment_content contentEditable="true" 
@@ -85,9 +89,12 @@
                 button.btn.btn-inverse.btn-post.pull-right#submit-comment  Submit Comment
         - else
           .row.comment-floor id="comment" 
-          .col-lg-12
-            .comment-title
-              font.text-center 登录可参与评论
+            .col-lg-12
+              .comment-title
+                a.pull-right 
+                  = @post.comments.count
+                  | &nbsp;&nbsp;&nbsp;Comments
+                font 登录可参与评论
         - @post.comments.order("created_at desc").each do |comment|
           .row.comment-floor
             .col-xs-2.col-sm-1.col-md-1.col-lg-1.comment-left

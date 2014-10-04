@@ -68,7 +68,16 @@
 		color: #95A5A6;
 	}
 }
-
+.over-post-tag{
+	display: block;
+	text-align: center;
+	font-size: 13px;
+	line-height: 25px;
+	color: #95A5A6;
+}
+.post-index:hover  .over-post-tag{
+	display: none;
+}
 .post-index:hover .over-post-index{
 	display: block;
 }
