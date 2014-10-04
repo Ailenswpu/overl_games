@@ -26,7 +26,7 @@
 	position: fixed;
 	width: 0px;
 	height: 100%;
-	right: 0;
+	right: -2px;
 	top: 0;
 	z-index: 3000;
 	border:0px;
@@ -49,5 +49,56 @@
 	background: #FFFFFF;
 	background-size: 100%;
 	display: none;
+	opacity:0;
+	filter:alpha(opacity=0);
 }
 
+
+
+.over-post-index{
+	display: none;
+	position: relative;
+	z-index: 1000;
+	span:hover{
+		cursor: pointer;
+		color: #1ABC9C;
+	}
+	span{
+		font-size: 16px;
+		color: #95A5A6;
+	}
+}
+.over-post-tag{
+	display: block;
+	text-align: center;
+	font-size: 13px;
+	line-height: 25px;
+	color: #95A5A6;
+}
+.post-index:hover  .over-post-tag{
+	display: none;
+}
+.post-index:hover .over-post-index{
+	display: block;
+}
+
+.post-index{
+	height: 300px;
+	img:hover{
+		cursor: pointer;
+	}
+	h6{
+		width: 100%;
+		word-break:keep-all;
+   		white-space:nowrap;
+		text-overflow:ellipsis;
+	}
+	p{
+		overflow: hidden;
+		margin-bottom: 0px;
+		width: 100%;
+		word-break:keep-all;
+   		white-space:nowrap;
+		text-overflow:ellipsis;
+	}
+}

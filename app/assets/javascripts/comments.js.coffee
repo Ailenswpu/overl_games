@@ -18,7 +18,7 @@ $ ->
 submit_comment =  ->
   text = $("#comment_content").html()
   if text == ""
-    $("#comment-tip").html("Couldn't be Null") 
+    $("#comment-tip").html("Can't be empty") 
     return false
   else
     sendComment(text)
@@ -88,7 +88,7 @@ new_reply_form =  ->
 submit_reply = ->
   text = $("div#current_reply_content").html()
   if text == ""
-    $("#current_tip").html("Couldn't be Null")
+    $("#current_tip").html("Can't be empty")
     return false
   else
     send_reply(text)
