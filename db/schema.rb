@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20141004015126) do
+=======
+ActiveRecord::Schema.define(version: 20141003110647) do
+>>>>>>> 290f5f5fdf006052eb08d90beefae3f23858d44f
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,6 +50,11 @@ ActiveRecord::Schema.define(version: 20141004015126) do
     t.integer  "user_id",                           null: false
     t.integer  "category",                          null: false
     t.string   "platform",          default: "iOS", null: false
+<<<<<<< HEAD
+=======
+    t.integer  "visit",             default: 0
+    t.integer  "vote",              default: 0
+>>>>>>> 290f5f5fdf006052eb08d90beefae3f23858d44f
   end
 
   create_table "replies", force: true do |t|

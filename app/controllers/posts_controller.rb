@@ -12,6 +12,10 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
+  def modal_show
+    @post = Post.find(params[:id])
+  end
+
   # GET /posts/new
   def new
     @categories = Category.all.map {|c| [c.name, c.id]}
