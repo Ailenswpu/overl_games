@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   
   
-  resources :posts 
+  resources :posts
+  get '/modal_show/:id', to: 'posts#modal_show'
 
   resources :comments
 
