@@ -26,7 +26,7 @@
 	position: fixed;
 	width: 0px;
 	height: 100%;
-	right: 0;
+	right: -2px;
 	top: 0;
 	z-index: 3000;
 	border:0px;
@@ -49,5 +49,28 @@
 	background: #FFFFFF;
 	background-size: 100%;
 	display: none;
+	opacity:0;
+	filter:alpha(opacity=0);
 }
 
+
+
+.over-post-index{
+	position: relative;
+	z-index: 1000;
+	span:hover{
+		cursor: pointer;
+	}
+	span{
+		font-size: 16px;
+	}
+}
+
+.post-index{
+	img:hover{
+		cursor: pointer;
+	}
+	p{
+		margin-bottom: 0px;
+	}
+}

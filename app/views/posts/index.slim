@@ -20,13 +20,23 @@
   .col-lg-12
     .row
       - @posts.each do |post|
-        a 
-         /a href=post_path(post) data-postmodal-id=(post.id)
-        .col-xs-12.col-sm-6.col-md-4.col-lg-3 
-          .tile data-postmodal-id=(post.id)
-            img.tile-image alt=post.title src=(image_url post.icon.url(:medium))
-              h3.tile-title = post.title
+        .col-xs-12.col-sm-6.col-md-4.col-lg-3.post-box
+            .tile.post-index 
+              h6 = post.title
               p = post.description
+              img.tile-image alt=post.title src=(image_url post.icon.url(:medium)) data-postmodal-id=(post.id)
+              .over-post-index
+                a 
+                  span.fui-new data-postmodal-id=(post.id)
+                a href=post_path(post) style="margin-left:10px;"
+                  span.fui-resize
+                a href="#" style="margin-left:10px;"
+                  span.fui-star-2
+
+                  
+                  
+            / .hover data-hover-id=(post.id)
+
 #20140912.row.home-floor
   .text-center
     a#20140912.btn.btn-primary href="#"  2014-09-24&nbsp;&nbsp;&nbsp;&darr;
