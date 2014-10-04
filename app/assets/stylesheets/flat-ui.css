@@ -5649,6 +5649,7 @@ fieldset[disabled] .twitter-typeahead .tt-hint {
   font-size: 15px;
   }
 .tile-image {
+  max-width: 100%;
   height: 100px;
   margin: 31px 0 27px;
   vertical-align: bottom;
@@ -5662,6 +5663,7 @@ fieldset[disabled] .twitter-typeahead .tt-hint {
   margin: 0;
   font-size: 20px;
   }
+
 .pallete-item {
   float: left;
   width: 140px;

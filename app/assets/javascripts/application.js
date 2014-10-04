@@ -14,3 +14,26 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+
+// $(document).ready(  
+//     function(){  
+//         document.onkeydown = function()  
+//         {  
+//             var oEvent = window.event;  
+//             if (oEvent.keyCode == 13 && oEvent.ctrlKey) {  
+//                 var control_id = document.activeElement.id;
+//                 alert(control_id);
+//                 switch(control_id) {
+//                 	case "comment-content":
+//                 		new_comment();
+//                 		break;
+//                 	case "current_reply_content":
+//                 		new_reply_content();
+//                 		break;
+//                     default:break;
+//                 }
+//             }  
+//         }  
+//     }  
+// );  

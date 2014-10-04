@@ -45,5 +45,6 @@ Rails.application.configure do
     :password             => Settings.smtp.password,
     :authentication       => Settings.smtp.authentication.to_sym,
     :enable_starttls_auto => true
-  }
+  }    
 end
+Paperclip.options[:command_path] = "/Users/mac/ImageMagick-6.8.9/bin"

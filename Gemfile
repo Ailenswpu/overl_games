@@ -38,6 +38,8 @@ gem 'sidetiq'
 gem 'sidekiq_mailer'
 gem 'slim'
 gem 'simple_form'
+gem "paperclip", "~> 4.2"
+gem 'mini_magick'
 # Add this if you're using rbenv
 gem 'capistrano-rbenv', github: "capistrano/rbenv"
 gem 'capistrano', '~> 3.2.1'
