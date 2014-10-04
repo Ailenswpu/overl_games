@@ -56,21 +56,39 @@
 
 
 .over-post-index{
+	// display: none;
 	position: relative;
 	z-index: 1000;
 	span:hover{
 		cursor: pointer;
+		color: #1ABC9C;
 	}
 	span{
 		font-size: 16px;
+		color: #95A5A6;
 	}
 }
+
+// .post-index:hover .over-post-index{
+// 	display: block;
+// }
 
 .post-index{
 	img:hover{
 		cursor: pointer;
 	}
+	h6{
+		width: 100%;
+		word-break:keep-all;
+   		white-space:nowrap;
+		text-overflow:ellipsis;
+	}
 	p{
+		overflow: hidden;
 		margin-bottom: 0px;
+		width: 100%;
+		word-break:keep-all;
+   		white-space:nowrap;
+		text-overflow:ellipsis;
 	}
 }

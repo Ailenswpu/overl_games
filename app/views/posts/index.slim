@@ -19,7 +19,7 @@
   p.floot-title -&nbsp;&nbsp;Today&nbsp;&nbsp;-
   .col-lg-12
     .row
-      - @posts.each do |post|
+      - @posts.order("created_at desc").each do |post|
         .col-xs-12.col-sm-6.col-md-4.col-lg-3.post-box
             .tile.post-index 
               h6 = post.title
@@ -32,11 +32,8 @@
                   span.fui-resize
                 a href="#" style="margin-left:10px;"
                   span.fui-star-2
-
-                  
-                  
-            / .hover data-hover-id=(post.id)
-
+                a href="#" style="margin-left:10px;"
+                  span.fui-export
 #20140912.row.home-floor
   .text-center
     a#20140912.btn.btn-primary href="#"  2014-09-24&nbsp;&nbsp;&nbsp;&darr;
