@@ -56,7 +56,7 @@
 
 
 .over-post-index{
-	// display: none;
+	display: none;
 	position: relative;
 	z-index: 1000;
 	span:hover{
@@ -69,11 +69,12 @@
 	}
 }
 
-// .post-index:hover .over-post-index{
-// 	display: block;
-// }
+.post-index:hover .over-post-index{
+	display: block;
+}
 
 .post-index{
+	height: 300px;
 	img:hover{
 		cursor: pointer;
 	}
