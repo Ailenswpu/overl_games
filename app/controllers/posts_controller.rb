@@ -10,6 +10,7 @@ class PostsController < ApplicationController
   
   def modal_show
     @post = Post.find(params[:id])
+    @post.add_visit
   end
 
   # GET /posts/new
