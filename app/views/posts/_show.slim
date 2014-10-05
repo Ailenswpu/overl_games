@@ -47,19 +47,19 @@
   .col-lg-12
     .btn-group.btn-group-justified
       - if @post.android.present?
-        a.btn.btn-success.cusp href=(@post.android) 
+        a.btn.btn-success.cusp target="_blank" href=(@post.android) 
           span.fui-android
           | &nbsp;&nbsp;Android
       - if @post.ios.present?
-        a.btn.btn-inverse.black.cusp href=(@post.ios)
+        a.btn.btn-inverse.black.cusp target="_blank" href=(@post.ios)
           span.fui-apple
           | &nbsp;&nbsp;IOS
       - if @post.windows.present?
-        a.btn.btn-info.cusp href=(@post.windows)
+        a.btn.btn-info.cusp target="_blank" href=(@post.windows)
           span.fui-windows-8
           | &nbsp;&nbsp;WinPone
       - if @post.web.present?
-        a.btn.btn-primary.cusp href=(@post.web)
+        a.btn.btn-primary.cusp target="_blank" href=(@post.web)
           span.fui-window
           | &nbsp;&nbsp;Web
 /! /row
