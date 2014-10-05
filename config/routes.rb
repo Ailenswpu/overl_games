@@ -20,13 +20,13 @@ Rails.application.routes.draw do
   get 'home/index' => "home#index",as: "about"
 
   #temp_pages
-  get 'temp_pages/index' => "temp_pages#index"
-  get 'temp_pages/show' => "temp_pages#show"
-  get 'temp_pages/find_password1' => "temp_pages#find_password1"
-  get 'temp_pages/find_password2' => "temp_pages#find_password2"
-  get 'temp_pages/find_password3' => "temp_pages#find_password3"
-  get 'temp_pages/find_password4' => "temp_pages#find_password4"
-  get 'temp_pages/after_sign_up' => "temp_pages#after_sign_up"
+  # get 'temp_pages/index' => "temp_pages#index"
+  # get 'temp_pages/show' => "temp_pages#show"
+  # get 'temp_pages/find_password1' => "temp_pages#find_password1"
+  # get 'temp_pages/find_password2' => "temp_pages#find_password2"
+  # get 'temp_pages/find_password3' => "temp_pages#find_password3"
+  # get 'temp_pages/find_password4' => "temp_pages#find_password4"
+  # get 'temp_pages/after_sign_up' => "temp_pages#after_sign_up"
   
   resources :registrations, only: [:new, :create, :confirmation] do
     collection do

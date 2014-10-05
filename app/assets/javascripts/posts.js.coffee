@@ -54,7 +54,7 @@ post_update_by_date =  ->
       error: (jqXHR, textStatus, errorThrown) ->  
           # alert("error")
       success: (data, textStatus, jqXHR) -> 
-          display_updated_posts(data)
+          display_updated_posts("#{data}")
 
 display_updated_posts = (data) ->
   json_str = jQuery.parseJSON(data)
@@ -88,7 +88,7 @@ post_element = (data) ->
       <a href='/posts/"+data.id+"' style='margin-left:15px;'' target='_blank' title='Show'>
         <span class='fui-resize'></span>
       </a>
-      <a href='#'' style='margin-left:15px;'' title='Chan'>
+      <a data-vote-id='"+data.id+"' style='margin-left:15px;cursor:pointer;'' title='Chan'>
         <span class='fui-heart'></span>
       </a>
       <a href='#'' style='margin-left:15px;' title='Share'>
@@ -98,9 +98,9 @@ post_element = (data) ->
     <div class='over-post-tag'>
       <font>"+data.category+"</font>
        <span class='fui-heart' style='margin-left:20px;'></span>
-      <font>"+data.votes_count+"</font>
+      <font>&nbsp;"+data.votes_count+"</font>
       <span class='fui-chat' style='margin-left:20px;'></span>
-      <font>"+data.comments_count+"</font>
+      <font>&nbsp;"+data.comments_count+"</font>
     </div>
   </div>
 </div>"
