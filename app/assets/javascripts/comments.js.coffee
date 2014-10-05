@@ -85,6 +85,7 @@ new_reply_form =  ->
               </div></div></div>"
   $("div[data-content-comment= '"+comment_id+"']").append(html_str)
   $("div[data-current_reply=current_reply").fadeIn()
+  $("#current_reply_content").focus()
 
 submit_reply = ->
   text = $("div#current_reply_content").html()

@@ -6,12 +6,12 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    @posts = Post.find_by_day(Time.now)
   end
 
   def update_post_by_date
     date = params[:date]
-    @posts = Post.find_by_day(date.to_datetime)
+    @posts = Post.find_by_day(date.to_datetime-1.day)
     render json: @posts
   end
   
