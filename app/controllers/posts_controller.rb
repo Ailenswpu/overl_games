@@ -11,12 +11,13 @@ class PostsController < ApplicationController
 
   def update_post_by_date
     date = params[:date]
-    @posts = Post.find_by_day(date.to_datetime)#Post.where("created_at >? and created_at <=?",date.to_datetime,(date.to_datetime + 1.day))
-    render :json =>@posts
+    @posts = Post.find_by_day(date.to_datetime)
+    render json: @posts
   end
   
   def modal_show
     @post = Post.find(params[:id])
+    @post.add_visit
   end
 
   # GET /posts/new
