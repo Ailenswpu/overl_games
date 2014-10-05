@@ -54,10 +54,12 @@ post_update_by_date =  ->
         alert("error")
         $("#current_tip").html("error") 
     success: (data, textStatus, jqXHR) -> 
-        jQuery.parseJSON(data)
-        alert(data)
+        display_updated_posts(data)
 
-update
+display_updated_posts = (data) ->
+  json_str = jQuery.parseJSON(data)
+  
+
 
 post_element = ->
   html_str = 
