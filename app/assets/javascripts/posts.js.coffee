@@ -7,7 +7,7 @@ $ ->
   $(document).on "click","[data-postmodal-id]", get_post_data
   $(document).on "click","#post-frame-bg", iframe_close
   $(document).on "click","#update_post_by_date", post_update_by_date
-  
+  post_update_by_date()
 
 get_post_data = ->
   post_id =  $(this).data("postmodal-id")
@@ -44,33 +44,48 @@ iframe_close = ->
 
 
 post_update_by_date =  ->
-  date = $(this).data("date")
-  $.ajax
-    url: "/update_post_by_date"
-    data: "date="+date
-    type: 'GET'  
-    dataType: 'html'  
-    error: (jqXHR, textStatus, errorThrown) ->  
-        alert("error")
-        $("#current_tip").html("error") 
-    success: (data, textStatus, jqXHR) -> 
-        jQuery.parseJSON(data)
-        alert(data)
+  if $("#update_post_by_date").length
+    date = $("#update_post_by_date").attr("value")
+    $.ajax
+      url: "/update_post_by_date"
+      data: "date="+date
+      type: 'GET'  
+      dataType: 'html'  
+      error: (jqXHR, textStatus, errorThrown) ->  
+          # alert("error")
+      success: (data, textStatus, jqXHR) -> 
+          display_updated_posts(data)
 
-update
+display_updated_posts = (data) ->
+  json_str = jQuery.parseJSON(data)
+  if json_str.length > 0
+    $("#update_post_by_date").attr("value",json_str[0].created_at)
+    html_str = "
+    <div class='row home-floor' style='display:none;'' data-floor-id='"+json_str[0].created_at+"'>
+    <p class='floot-title'>-&nbsp;&nbsp;"+json_str[0].created_at+"&nbsp;&nbsp;-</p>
+    <div class='col-lg-12'>
+      <div class='row' data-floor-content="+json_str[0].created_at+">
+        </div></div></div>
+        "
+    $("#data-next-date").before(html_str)
+    $("[data-floor-id="+json_str[0].created_at+"]").fadeIn()
+    for data in json_str
+      post_element(data)
+  else
+    post_element_end()
 
-post_element = ->
+post_element = (data) ->
   html_str = 
-  "<div class='col-xs-12 col-sm-6 col-md-4 col-lg-3 post-box'>
+  "<div class='col-xs-12 col-sm-6 col-md-4 col-lg-3 post-box' data-post-box-id='"+data.id+"' style='display:none;'>
   <div class='tile post-index'>
-    <h6>fdsaf</h6>
-    <p>fdsafsa</p>
-    <img alt='fdsaf' class='tile-image' data-postmodal-id='2' src='http://www.aabar.me/system/posts/icons/000/000/002/medium/mail.png?1412477458'>
+    <h6>"+data.title+"</h6>
+    <p>"+data.description+"</p>
+    <img alt='"+data.title+"' class='tile-image' data-postmodal-id='"+data.id+"' src='"+data.icon+"'>
     <div class='over-post-index'>
       <a title='View'>
-        <span class='fui-eye' data-postmodal-id='2'></span>
+        <span class='fui-eye' data-postmodal-id='"+data.id+"'></span>
       </a>
-      <a href='/posts/2' style='margin-left:15px;'' target='_blank' title='Show'>
+      <a href='/posts/"+data.id+"' style='margin-left:15px;'' target='_blank' title='Show'>
         <span class='fui-resize'></span>
       </a>
       <a href='#'' style='margin-left:15px;'' title='Chan'>
@@ -81,7 +96,14 @@ post_element = ->
       </a>
     </div>
     <div class='over-post-tag'>
-      <span>街机游戏</span>
+      <span>"+data.category+"</span>
     </div>
   </div>
 </div>"
+  $("[data-floor-content="+data.created_at+"]").append(html_str)
+  $("[data-post-box-id="+data.id+"]").fadeIn()
+
+post_element_end = ->
+  $("#data-next-date").hide()
+  $("#end").fadeIn()
+
