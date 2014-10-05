@@ -1,15 +1,15 @@
 .row
   .col-lg-12
     .banner
-      h5.text-center New games every day
-      p.text-center Discover the best games, Happy your free time, And share with everyone.Come subscribe now
+      h5.text-center = t("home.slogan_big")
+      p.text-center  = t("home.slogan_small")
       .row
         .col-xs-12.col-sm-1.col-md-2.col-lg-3
         .col-xs-12.col-sm-10.col-md-8.col-lg-6
           form action="#" role="search" 
             .form-group
               .input-group
-                input#navbarInput-01.form-control placeholder=("E-mail subscription") type="search" 
+                input#navbarInput-01.form-control placeholder=(t("home.email_subscaiption")) type="search" 
                   span.input-group-btn.tran-bg
                     button.btn type="submit" 
                       span.fui-clip
