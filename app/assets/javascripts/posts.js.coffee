@@ -106,3 +106,4 @@ post_element = (data) ->
 post_element_end = ->
   $("#data-next-date").hide()
   $("#end").fadeIn()
+
