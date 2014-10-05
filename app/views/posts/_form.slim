@@ -4,37 +4,44 @@
     .col-lg-10
       h5 添加游戏
   .form-group
+    label.col-lg-2.control-label  
+    .col-lg-9 基本信息
+  .form-group
     label.col-lg-2.control-label  游戏图标
-    .col-lg-8
+    .col-lg-9
       = f.input :icon, as: :file, label: false
   .form-group
     label.col-lg-2.control-label  游戏类别
-    .col-lg-2
-      = f.input :category, as: :select, label: false, collection: @categories
-  .form-group
-    label.col-lg-2.control-label  iOS(可选)
-    .col-lg-8
-      = f.input :ios, label: false, style: "max-width:40px;", type: "text", input_html: {class: 'form-control'}
-  .form-group
-    label.col-lg-2.control-label  Android(可选)
-    .col-lg-8
-      = f.input :android, label: false, style: "max-width:40px;", type: "text", input_html: {class: 'form-control'}
-  .form-group
-    label.col-lg-2.control-label  Windows(可选)
-    .col-lg-8
-      = f.input :windows, label: false, style: "max-width:40px;", type: "text", input_html: {class: 'form-control'}
-  .form-group
-    label.col-lg-2.control-label  Web(可选)
-    .col-lg-8
-      = f.input :web, label: false, style: "max-width:40px;", type: "text", input_html: {class: 'form-control'}
+    .col-lg-3
+      = f.input :category_id, as: :select, label: false, collection: @categories, input_html: {class: 'input-select'}
   .form-group
     label.col-lg-2.control-label  游戏名称
-    .col-lg-8
+    .col-lg-9
       = f.input :title, label: false,style: "max-width:40px;", type: "text", input_html: {class: 'form-control'}  
   .form-group
     label.col-lg-2.control-label  游戏简介
-    .col-lg-8
+    .col-lg-9
       = f.input :description, label: false, style: "max-width:40px;", type: "text", input_html: {class: 'form-control'}
+  .form-group
+    label.col-lg-2.control-label  
+    .col-lg-9 游戏平台及链接
+  .form-group
+    label.col-lg-2.control-label  iOS(可选)
+    .col-lg-9
+      = f.input :ios, label: false, style: "max-width:40px;", type: "text", input_html: {class: 'form-control'}
+  .form-group
+    label.col-lg-2.control-label  Android(可选)
+    .col-lg-9
+      = f.input :android, label: false, style: "max-width:40px;", type: "text", input_html: {class: 'form-control'}
+  .form-group
+    label.col-lg-2.control-label  Windows(可选)
+    .col-lg-9
+      = f.input :windows, label: false, style: "max-width:40px;", type: "text", input_html: {class: 'form-control'}
+  .form-group
+    label.col-lg-2.control-label  Web(可选)
+    .col-lg-9
+      = f.input :web, label: false, style: "max-width:40px;", type: "text", input_html: {class: 'form-control'}
+  
   .form-group
     .col-lg-offset-2.col-lg-10
       button.btn.btn-primary type="submit"  提交

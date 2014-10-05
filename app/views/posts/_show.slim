@@ -112,7 +112,7 @@
                   - if current_user
                     a.pull-right data-comment-id=(comment.id) data-user-id=(comment.user.id) data-user-name=(comment.user.name)
                       span.fui-bubble
-                p = comment.content
+                p = comment.content.html_safe
               - comment.replies.each do |reply|
                 .row.comment-floor
                   .col-xs-2.col-sm-1.col-md-1.col-lg-1.comment-left
@@ -125,4 +125,4 @@
                         font = reply.created_at
                         / a.pull-right data-comment-id=(comment.id) data-user-name=(reply.user.name) data-user-id=(reply.user.id)
                         /   span.fui-bubble
-                      p = reply.content
+                      p = reply.content.html_safe
