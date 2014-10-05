@@ -13,8 +13,6 @@ $ ->
       else if control_id == "current_reply_content"
         submit_reply()
       
-
-
 submit_comment =  ->
   text = $("#comment_content").html()
   if text == ""

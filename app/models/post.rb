@@ -18,7 +18,13 @@ class Post < ActiveRecord::Base
   scope :find_by_day, -> (date) {where('created_at >= ? and created_at <= ?', date.at_beginning_of_day, date.at_end_of_day)}
 
   def as_json(options = {})
-     super(only: [:id, :title ,:description]).merge({created_at: self.created_at.strftime("%Y-%m-%d"), icon: icon_url,category: category_name})
+     super(only: [:id, :title ,:description]).merge({
+      created_at: self.created_at.strftime("%Y-%m-%d"), 
+      icon: icon_url,
+      category: category_name,
+      votes_count: vote_count,
+      comments_count: comment_count,
+      })
   end
 
   def icon_url
@@ -27,6 +33,14 @@ class Post < ActiveRecord::Base
 
   def category_name
     self.category.name
+  end
+
+  def vote_count
+    self.votes.count
+  end
+
+  def comment_count
+    self.comments.count
   end
 
 
