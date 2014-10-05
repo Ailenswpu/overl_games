@@ -11,7 +11,7 @@ class PostsController < ApplicationController
 
   def update_post_by_date
     date = params[:date]
-    @posts = Post.find_by_day(date.to_datetime-1.day)
+    @posts = Post.find_by_day(date.to_datetime-1.day).order("created_at desc")
     render json: @posts
   end
   
