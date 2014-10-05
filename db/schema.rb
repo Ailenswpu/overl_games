@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141005015716) do
+ActiveRecord::Schema.define(version: 20141005075234) do
 
   create_table "categories", force: true do |t|
     t.string   "name",       null: false
@@ -39,11 +39,11 @@ ActiveRecord::Schema.define(version: 20141005015716) do
     t.integer  "icon_file_size"
     t.datetime "icon_updated_at"
     t.integer  "user_id",           null: false
-    t.integer  "category",          null: false
     t.string   "ios"
     t.string   "android"
     t.string   "windows"
     t.string   "web"
+    t.integer  "category_id",       null: false
   end
 
   create_table "replies", force: true do |t|

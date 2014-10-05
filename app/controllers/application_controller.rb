@@ -8,6 +8,8 @@ class ApplicationController < ActionController::Base
   
   before_action :authenticate_user!, except: [:index, :new, :show]
   
+  
+
   private
   
   def current_user

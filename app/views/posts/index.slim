@@ -1,19 +1,18 @@
-
 .row
   .col-lg-12
     .banner
-      h5.text-center Everybody needs an app to love
-      p.text-center Discover the best apps everyday, in the most simple and fascinating way
+      h5.text-center New games every day
+      p.text-center Discover the best games, Happy your free time, And share with everyone.Come subscribe now
       .row
         .col-xs-12.col-sm-1.col-md-2.col-lg-3
         .col-xs-12.col-sm-10.col-md-8.col-lg-6
           form action="#" role="search" 
             .form-group
               .input-group
-                input#navbarInput-01.form-control placeholder=("Search for You Want") type="search" 
+                input#navbarInput-01.form-control placeholder=("E-mail subscription") type="search" 
                   span.input-group-btn.tran-bg
                     button.btn type="submit" 
-                      span.fui-search
+                      span.fui-clip
         .col-xs-12.col-sm-1.col-md-2.col-lg-3
 .row.home-floor
   p.floot-title -&nbsp;&nbsp;Today&nbsp;&nbsp;-
@@ -35,10 +34,12 @@
                 a href="#" style="margin-left:15px;" title="Share"
                   span.fui-export
               .over-post-tag
-                span 街机游戏
-#20140912.row.home-floor
+                span = post.category.name
+.row.home-floor
   .text-center
-    a#20140912.btn.btn-primary href="#"  2014-09-24&nbsp;&nbsp;&nbsp;&darr;
+    a.btn.btn-primary id="update_post_by_date" data-date=(Time.now.strftime("%Y-%m-%d")) href="#"  
+      = (Time.now.strftime("%Y-%m-%d"))
+      | &nbsp;&nbsp;&nbsp;&darr;
 #20140912.row.home-floor
   h5.text-center
     | END

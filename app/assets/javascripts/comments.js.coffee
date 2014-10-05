@@ -42,7 +42,7 @@ displayComment = (jsonStr) ->
   #data.content
   user_avatar = "http://www.aabar.me/assets/third_section/qq.png"
   html_str = "
-      <div class='row comment-floor'>
+      <div class='row comment-floor' data-floor-id='"+data.id+"' style='display:none;'>
         <div class='col-xs-2 col-sm-1 col-md-1 col-lg-1 comment-left'>
           <img class='comment-avatar' src='"+data.user_avatar+"'>
             </div>
@@ -62,6 +62,7 @@ displayComment = (jsonStr) ->
                 </div>
                 </div>"
   $("#comment").after(html_str)
+  $("div[data-floor-id="+data.id+"]").fadeIn()
   $("#comment_content").html("")
     
 
@@ -72,7 +73,7 @@ new_reply_form =  ->
   user_name = $(this).data("user-name")
   $("div[data-current_reply]").remove()
   html_str = "
-    <div class='row comment-floor' data-current_reply='current_reply'>
+    <div class='row comment-floor' data-current_reply='current_reply' style='display:none;'>
     <div class='col-xs-2 col-sm-1 col-md-1 col-lg-1 comment-left'>
       <img class='comment-avatar' src='"+user_avatar+"'>
     </div>
@@ -83,7 +84,7 @@ new_reply_form =  ->
             <button class='btn btn-inverse btn-post pull-right' id='current_button' data-current_submit='current_submit' data-comment-id='"+comment_id+"' data-user-id='"+user_id+"'>Reply</button>
               </div></div></div>"
   $("div[data-content-comment= '"+comment_id+"']").append(html_str)
-
+  $("div[data-current_reply=current_reply").fadeIn()
 
 submit_reply = ->
   text = $("div#current_reply_content").html()
@@ -109,7 +110,7 @@ send_reply = (text) ->
 new_reply_content = (jsonStr)  ->
     data = jQuery.parseJSON(jsonStr)
     html_str = "
-    <div class='row comment-floor'>
+    <div class='row comment-floor' data-reply-id="+data.id+" style='display:none;'>
       <div class='col-xs-2 col-sm-1 col-md-1 col-lg-1 comment-left'>
         <img class='comment-avatar' src='"+data.user_avatar+"'>
           </div>
@@ -126,4 +127,5 @@ new_reply_content = (jsonStr)  ->
     #<span class='fui-bubble'></span>
     #</a>
     $("div[data-content-comment= '"+data.comment_id+"']").append(html_str)
+    $("div[data-reply-id="+data.id+"]").fadeIn()
     $("div[data-current_reply]").remove()

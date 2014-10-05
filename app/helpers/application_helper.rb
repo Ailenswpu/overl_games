@@ -1,11 +1,13 @@
 module ApplicationHelper
-	def current_user
+	# def current_user
           
-	end
+	# end
 
-	def email_to_url(email)	
-		domain = email.split("@")[1]
-  		url = 'http://mail.' + domain + '/';
-	end
+	# def email_to_url(email)	
+	# 	domain = email.split("@")[1]
+ #  		url = 'http://mail.' + domain + '/';
+	# end
+
+      
 
 end

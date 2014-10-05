@@ -2,10 +2,17 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
   skip_before_action :authenticate_user!, only: [:modal_show]
   layout 'modal' ,only: [:modal_show]
+
   # GET /posts
   # GET /posts.json
   def index
     @posts = Post.all
+  end
+
+  def update_post_by_date
+    date = params[:date]
+    @posts = Post.find_by_day(date.to_datetime)#Post.where("created_at >? and created_at <=?",date.to_datetime,(date.to_datetime + 1.day))
+    render :json =>@posts
   end
   
   def modal_show
@@ -70,6 +77,6 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:title, :description, :icon, :category, :ios, :android, :windows, :web )
+      params.require(:post).permit(:title, :description, :icon, :category_id, :ios, :android, :windows, :web )
     end
 end
