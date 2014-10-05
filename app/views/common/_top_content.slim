@@ -4,29 +4,35 @@
       span.sr-only Toggle navigation
     a.navbar-brand href=root_path  OverlGames
   .navbar-collapse.collapse
-    ul.nav.navbar-nav
-      li.dropdown
-        a.dropdown-toggle data-toggle="dropdown" href="#" 
-          | CATEGORIES
-          b.caret
-        ul.dropdown-menu
-          li
-            a href="#"  Action
-          li
-            a href="#"  Another action
-          li
-            a href="#"  Something else here
-          li.divider
-          li.dropdown-header Nav header
-          li
-            a href="#"  Separated link
-          li
-            a href="#"  One more separated link
+    / ul.nav.navbar-nav
+    /   li.dropdown
+    /     a.dropdown-toggle data-toggle="dropdown" href="#" 
+    /       | CATEGORIES
+    /       b.caret
+    /     ul.dropdown-menu
+    /       li
+    /         a href="#"  Action
+    /       li
+    /         a href="#"  Another action
+    /       li
+    /         a href="#"  Something else here
+    /       li.divider
+    /       li.dropdown-header Nav header
+    /       li
+    /         a href="#"  Separated link
+    /       li
+    /         a href="#"  One more separated 
       / li
       /   a href="#about"  ABOUT
       / li
       /   a href="#contact"  CONTACT
     ul.nav.navbar-nav.navbar-right
+      li
+        a href="https://graph.qq.com/oauth2.0/authorize?response_type=code&client_id=101157953&redirect_uri=www.aabar.me/auth/qq_connect/callback&scope=get_user_info" 
+          img src=(image_url 'temp/liti.jpg') width="22" heght="22"
+      li
+        a href="https://api.weibo.com/oauth2/authorize?client_id=3825053910&redirect_uri=www.aabar.me/auth/weibo/callback&response_type=code" 
+          img src=(image_url 'temp/weibo.png')  width="110"
       li.dropdown
         a.dropdown-toggle href="#" data-toggle="dropdown"
           span.language En
@@ -43,7 +49,7 @@
             li
               a href=new_post_path
                 span.fui-plus
-                | &nbsp;&nbsp;New Post
+                | &nbsp;&nbsp;New Game
             / li
             / li.divider
             / li.dropdown-header User Center

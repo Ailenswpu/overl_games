@@ -8,8 +8,15 @@ class Post < ActiveRecord::Base
   has_many :comments
   has_many :votes
   belongs_to :user
-  
+  belongs_to :category
+    
   def add_visit
     update_attributes!(visit: visit + 1)
+  end
+  
+  scope :find_by_day, -> (date) {where('created_at >= ? and created_at <= ?', date.at_beginning_of_day, date.at_end_of_day)}
+
+  def as_json(options = {})
+     super(only: [:id, :title ,:description,:icon_content_type]).merge({created_at: self.created_at.strftime("%Y-%m-%d")})
   end
 end
