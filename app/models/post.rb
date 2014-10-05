@@ -4,6 +4,7 @@ class Post < ActiveRecord::Base
   validates_attachment_content_type :icon, :content_type => /\Aimage\/.*\Z/
   validates_presence_of :icon, :title, :description, :category
   validates_format_of :ios, :android, :windows, :web, with: /https?:\/\/[\S]+/, allow_nil: true, allow_blank: true, message: "请输入正确的url格式"
+  validates_length_of :description, maximum: 400, message: "请输入小于400字符的描述"
 
   has_many :comments
   has_many :votes
