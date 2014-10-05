@@ -89,14 +89,18 @@ post_element = (data) ->
         <span class='fui-resize'></span>
       </a>
       <a href='#'' style='margin-left:15px;'' title='Chan'>
-        <span class='fui-star-2'></span>
+        <span class='fui-heart'></span>
       </a>
       <a href='#'' style='margin-left:15px;' title='Share'>
         <span class='fui-export'></span>
       </a>
     </div>
     <div class='over-post-tag'>
-      <span>"+data.category+"</span>
+      <font>"+data.category+"</font>
+       <span class='fui-heart' style='margin-left:20px;'></span>
+      <font>"+data.votes_count+"</font>
+      <span class='fui-chat' style='margin-left:20px;'></span>
+      <font>"+data.comments_count+"</font>
     </div>
   </div>
 </div>"
