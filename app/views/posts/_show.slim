@@ -70,7 +70,7 @@
 .row style="margin-bottom:20px;"
   .col-lg-12
     .page
-      .text-area style="padding-top:5px;"
+      .text-area style="padding-top:5px;" id="comments"
         - if current_user
           .row.comment-floor id="comment" data-post-id=(@post.id) data-user-id=(current_user.id) data-user-avatar=(current_user.avatar) data-user-name=(image_url current_user.name)
             .col-lg-12
@@ -80,11 +80,11 @@
                   span.fui-export
                 a.pull-right href="#" 
                   | Favarite&nbsp;
-                  span.fui-heart
+                  span.fui-star-2
                 a.pull-right style="color:#7F8C8D;"
                   = @post.comments.count
-                  | &nbsp;&nbsp;&nbsp;Comments&nbsp;&nbsp;
-                  span.fui-new
+                  | &nbsp;
+                  span.fui-bubble
                 font Give your opinion
             .col-lg-12
               .comment-input#comment_content contentEditable="true" 

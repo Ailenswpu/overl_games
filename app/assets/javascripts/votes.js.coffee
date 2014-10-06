@@ -22,4 +22,8 @@ vote = ->
 
 response_vote = (jsonStr,id) ->
   data = jQuery.parseJSON(jsonStr)
+  if data.cmd == "add"
+    $("[data-vote-id="+id+"]").addClass("red")
+  else if data.cmd == "minus"
+    $("[data-vote-id="+id+"]").removeClass("red")
   $("[data-votescount-id="+id+"]").html(data.result)

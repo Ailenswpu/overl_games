@@ -6,11 +6,11 @@ class VotesController < ApplicationController
     if @vote.nil?
       @post.votes << Vote.create!(user_id: current_user.id)
       @post.reload
-      render :json => {result:@post.votes_count}
+      render :json => {result:@post.votes_count,cmd:"add"}
     else
         if @vote.destroy!
           @post.reload
-          render :json => {result: @post.votes_count}
+          render :json => {result: @post.votes_count,cmd:"minus"}
         end
     end
   end
