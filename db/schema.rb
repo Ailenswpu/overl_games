@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141006012051) do
+ActiveRecord::Schema.define(version: 20141006033324) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "categories", force: true do |t|
     t.string   "name",       null: false
@@ -28,6 +31,7 @@ ActiveRecord::Schema.define(version: 20141006012051) do
   end
 
   add_index "comments", ["post_id"], name: "index_comments_on_post_id", using: :btree
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
   create_table "posts", force: true do |t|
     t.string   "title"
@@ -43,8 +47,8 @@ ActiveRecord::Schema.define(version: 20141006012051) do
     t.string   "android"
     t.string   "windows"
     t.string   "web"
-    t.integer  "category_id",                   null: false
     t.integer  "visit",             default: 0
+    t.integer  "category_id",                   null: false
     t.integer  "comments_count",    default: 0
     t.integer  "votes_count",       default: 0
   end
@@ -59,6 +63,12 @@ ActiveRecord::Schema.define(version: 20141006012051) do
 
   add_index "replies", ["comment_id"], name: "index_replies_on_comment_id", using: :btree
   add_index "replies", ["user_id"], name: "index_replies_on_user_id", using: :btree
+
+  create_table "subscriptions", force: true do |t|
+    t.string   "email",      null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "provider",         null: false
