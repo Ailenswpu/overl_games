@@ -2,6 +2,7 @@ class Admin::PostsController < ApplicationController
   http_basic_authenticate_with name: "admin", password: "admin"
   before_action :set_admin_post, only: [:show, :edit, :update, :destroy]
 
+  layout 'admin'
   # GET /admin/posts
   # GET /admin/posts.json
   def index

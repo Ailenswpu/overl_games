@@ -8,10 +8,11 @@
         .col-xs-12.col-sm-10.col-md-8.col-lg-6
           = simple_form_for(Subscription.new, :validate => true,:html=> { multipart: true, class: "form-horizontal", role: "search" }) do |f| 
             .form-group
-              = f.input :email, label: false, type: "search", input_html: { class: 'form-control' }
-              span.input-group-btn.tran-bg
-                button.btn type="submit" 
-                  span.fui-clip
+              .input-group
+                = f.input :email, label: false, type: "search", input_html: { class: 'form-control',placeholder: "Subscribe to E-mail" }
+                span.input-group-btn.tran-bg
+                  button.btn type="submit" 
+                    span.fui-clip
         .col-xs-12.col-sm-1.col-md-2.col-lg-3
 / .row.home-floor
 /   p.floot-title -&nbsp;&nbsp;Today&nbsp;&nbsp;-
