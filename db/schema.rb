@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20141006033324) do
   end
 
   add_index "comments", ["post_id"], name: "index_comments_on_post_id", using: :btree
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
 
   create_table "posts", force: true do |t|
     t.string   "title"
@@ -43,8 +44,8 @@ ActiveRecord::Schema.define(version: 20141006033324) do
     t.string   "android"
     t.string   "windows"
     t.string   "web"
-    t.integer  "category_id",                   null: false
     t.integer  "visit",             default: 0
+    t.integer  "category_id",                   null: false
     t.integer  "comments_count",    default: 0
     t.integer  "votes_count",       default: 0
   end

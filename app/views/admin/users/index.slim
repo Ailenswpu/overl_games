@@ -1,0 +1,19 @@
+h6 Users
+table.table
+  thead
+    tr
+      th Provider
+      th Uid
+      th Name
+      th Created at
+      th colspan="3"  Control
+  tbody
+    - @admin_users.each do |admin_user|
+      tr
+        td= admin_user.provider
+        td= admin_user.uid
+        td= admin_user.name
+        td= admin_user.created_at
+        td= link_to 'Show', admin_user
+        td= link_to 'Edit', edit_admin_user_path(admin_user)
+        td= link_to 'Destroy', admin_user, method: :delete, data: { confirm: 'Are you sure?'  }   
