@@ -1,0 +1,31 @@
+<h1>Listing admin_users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Provider</th>
+      <th>Uid</th>
+      <th>Name</th>
+      <th>Created at</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @admin_users.each do |admin_user| %>
+      <tr>
+        <td><%= admin_user.provider %></td>
+        <td><%= admin_user.uid %></td>
+        <td><%= admin_user.name %></td>
+        <td><%= admin_user.created_at %></td>
+        <td><%= link_to 'Show', admin_user %></td>
+        <td><%= link_to 'Edit', edit_admin_user_path(admin_user) %></td>
+        <td><%= link_to 'Destroy', admin_user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New User', new_admin_user_path %>

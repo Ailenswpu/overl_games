@@ -1,0 +1,64 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @admin_post.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @admin_post.description %>
+</p>
+
+<p>
+  <strong>Icon:</strong>
+  <%= @admin_post.icon %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @admin_post.user_id %>
+</p>
+
+<p>
+  <strong>Ios:</strong>
+  <%= @admin_post.ios %>
+</p>
+
+<p>
+  <strong>Android:</strong>
+  <%= @admin_post.android %>
+</p>
+
+<p>
+  <strong>Windows:</strong>
+  <%= @admin_post.windows %>
+</p>
+
+<p>
+  <strong>Web:</strong>
+  <%= @admin_post.web %>
+</p>
+
+<p>
+  <strong>Visit:</strong>
+  <%= @admin_post.visit %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @admin_post.category_id %>
+</p>
+
+<p>
+  <strong>Comments count:</strong>
+  <%= @admin_post.comments_count %>
+</p>
+
+<p>
+  <strong>Votes count:</strong>
+  <%= @admin_post.votes_count %>
+</p>
+
+<%= link_to 'Edit', edit_admin_post_path(@admin_post) %> |
+<%= link_to 'Back', admin_posts_path %>
