@@ -97,8 +97,8 @@ post_element = (data) ->
     </div>
     <div class='over-post-tag'>
       <font>"+data.category+"</font>
-       <span class='fui-heart' style='margin-left:20px;'></span>
-      <font>&nbsp;"+data.votes_count+"</font>
+       <span class='fui-heart' style='margin-left:20px;'></span>&nbsp;
+      <font data-votescount-id='"+data.id+"''>"+data.votes_count+"</font>
       <span class='fui-chat' style='margin-left:20px;'></span>
       <font>&nbsp;"+data.comments_count+"</font>
     </div>

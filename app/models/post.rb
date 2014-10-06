@@ -22,8 +22,8 @@ class Post < ActiveRecord::Base
       created_at: self.created_at.strftime("%Y-%m-%d"), 
       icon: icon_url,
       category: category_name,
-      votes_count: vote_count,
-      comments_count: comment_count,
+      votes_count: votes_count,
+      comments_count: comments_count,
       })
   end
 
@@ -34,14 +34,4 @@ class Post < ActiveRecord::Base
   def category_name
     self.category.name
   end
-
-  def vote_count
-    self.votes.count
-  end
-
-  def comment_count
-    self.comments.count
-  end
-
-
 end

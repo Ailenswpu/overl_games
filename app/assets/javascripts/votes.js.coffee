@@ -18,9 +18,8 @@ vote = ->
       error: (jqXHR, textStatus, errorThrown) ->  
         alert("ajax error")
       success: (data, textStatus, jqXHR) -> 
-        alert("success")
-        response_vote("#{data}")
+        response_vote("#{data}",id)
 
-response_vote = (jsonStr) ->
-  alert(jsonStr)
+response_vote = (jsonStr,id) ->
   data = jQuery.parseJSON(jsonStr)
+  $("[data-votescount-id="+id+"]").html(data.result)
