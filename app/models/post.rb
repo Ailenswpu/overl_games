@@ -13,33 +13,35 @@ class Post < ActiveRecord::Base
   belongs_to :category
   
   def self.recent_post(date)
-    recent_posts = find_by_day(date)
-    until recent_posts.present? do
-      date = date - 1.day
+    if where('created_at <= ?', date.at_end_of_day).present?
       recent_posts = find_by_day(date)
+      until recent_posts.present? do
+        date = date - 1.day
+        recent_posts = find_by_day(date)
+      end
     end
-    return recent_posts
+    return recent_posts || []
   end
 
   def as_json(options = {})
-     super(only: [:id, :title ,:description]).merge({
+    super(only: [:id, :title ,:description]).merge({
       created_at: self.created_at.strftime("%Y-%m-%d"), 
       icon: icon_url,
       category: category_name,
       votes_count: votes_count,
       comments_count: comments_count,
       })
-  end
+    end
   
-  def add_visit
-    update_attributes!(visit: visit + 1)
-  end
+    def add_visit
+      update_attributes!(visit: visit + 1)
+    end
 
-  def icon_url
-    icon.url(:medium)
-  end
+    def icon_url
+      icon.url(:medium)
+    end
 
-  def category_name
-    self.category.name
+    def category_name
+      self.category.name
+    end
   end
-end
