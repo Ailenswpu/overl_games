@@ -29,18 +29,18 @@
     ul.nav.navbar-nav.navbar-right
       li
         a href="https://graph.qq.com/oauth2.0/authorize?response_type=code&client_id=101157953&redirect_uri=www.aabar.me/auth/qq_connect/callback&scope=get_user_info" 
-          img src=(image_url 'temp/liti.jpg') width="22" heght="22"
+          img src=(image_url 'temp/QQlogin.png')  height="22"
       li
         a href="https://api.weibo.com/oauth2/authorize?client_id=3825053910&redirect_uri=www.aabar.me/auth/weibo/callback&response_type=code" 
-          img src=(image_url 'temp/weibo.png')  width="110"
-      li.dropdown
-        a.dropdown-toggle href="#" data-toggle="dropdown"
-          span.language En
-        ul.dropdown-menu
-          li
-            a href="#"  简体中文
-          li
-            a href="#"  English
+          img src=(image_url 'temp/weibo.png')  height="22"
+      / li.dropdown
+      /   a.dropdown-toggle href="#" data-toggle="dropdown"
+      /     span.language En
+      /   ul.dropdown-menu
+      /     li
+      /       a href="#"  简体中文
+      /     li
+      /       a href="#"  English
       - if current_user
         li.dropdown
           a.dropdown-toggle href="#" data-toggle="dropdown" data-user-id=(current_user.id)
@@ -61,10 +61,10 @@
       - unless current_user
         li
           a.dropdown-toggle href="#" data-toggle="dropdown" style="font-size:22px;"
-            span.fui-user
+            span.fui-plus
           ul.dropdown-menu
             li.divider
-            li.dropdown-header.text-center Platform
+            li.dropdown-header.text-center Log in with
             li
               a href="#"  
                 img src=(image_url 'third_section/facebook.png') width="15" heght="15" style="margin-right:10px;"
