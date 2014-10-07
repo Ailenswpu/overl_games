@@ -9,7 +9,7 @@
           = simple_form_for(Subscription.new, :validate => true,:html=> { multipart: true, class: "form-horizontal", role: "search" }) do |f| 
             .form-group
               .input-group
-                = f.input :email, label: false, type: "search", input_html: { class: 'form-control',placeholder: "Subscribe to E-mail" }
+                = f.input :email, label: false, type: "search", input_html: { class: 'form-control', placeholder: t('home.email_subscaiption') }
                 span.input-group-btn.tran-bg
                   button.btn type="submit" 
                     span.fui-clip
