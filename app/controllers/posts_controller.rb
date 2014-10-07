@@ -7,7 +7,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.find_by_day(Time.now)
+    @posts = Post.recent_post(Time.now)
   end
 
   def update_post_by_date
