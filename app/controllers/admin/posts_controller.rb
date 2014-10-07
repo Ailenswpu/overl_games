@@ -21,6 +21,7 @@ class Admin::PostsController < ApplicationController
 
   # GET /admin/posts/1/edit
   def edit
+
   end
 
   # POST /admin/posts
@@ -44,8 +45,8 @@ class Admin::PostsController < ApplicationController
   def update
     respond_to do |format|
       if @admin_post.update(admin_post_params)
-        format.html { redirect_to @admin_post, notice: 'Post was successfully updated.' }
-        format.json { render :show, status: :ok, location: @admin_post }
+        format.html { render :index, notice: 'Post was successfully updated.' }
+        format.json { render :index, status: :ok, location: @admin_post }
       else
         format.html { render :edit }
         format.json { render json: @admin_post.errors, status: :unprocessable_entity }
