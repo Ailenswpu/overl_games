@@ -75,17 +75,20 @@
           .row.comment-floor id="comment" data-post-id=(@post.id) data-user-id=(current_user.id) data-user-avatar=(current_user.avatar) data-user-name=(image_url current_user.name)
             .col-lg-12
               .comment-title
-                a.pull-right href="#" 
-                  | Share&nbsp;
-                  span.fui-export
-                a.pull-right href="#" 
-                  | Favarite&nbsp;
-                  span.fui-star-2
-                a.pull-right style="color:#7F8C8D;"
-                  = @post.comments.count
-                  | &nbsp;
-                  span.fui-bubble
-                font Give your opinion
+                .row
+                  .col-xs-12.col-sm-12.col-md-6.col-lg-6
+                    font Give your opinion
+                  .col-xs-12.col-sm-12.col-md-6.col-lg-6 style="text-align:right;"
+                    = social_share_button_tag(@post.title)
+                    / a.pull-right style="cursor:pointer;" data-share=@post.id
+                    /   / | Share&nbsp;
+                    /   span.fui-export
+                    / a.pull-right data-vote-id=@post.id style="cursor:pointer;'"
+                    /   span.fui-star-2
+                    / a.pull-right style="color:#7F8C8D;"
+                    /   = @post.comments.count
+                    /   | &nbsp;
+                    /   span.fui-bubble
             .col-lg-12
               .comment-input#comment_content contentEditable="true" 
               .comment-control
@@ -95,10 +98,11 @@
           .row.comment-floor id="comment" 
             .col-lg-12
               .comment-title
-                a.pull-right 
-                  = @post.comments.count
-                  | &nbsp;&nbsp;&nbsp;Comments
-                font 登录可参与评论
+                .row
+                  .col-xs-12.col-sm-12.col-md-6.col-lg-6
+                    font 登录可参与评论
+                  .col-xs-12.col-sm-12.col-md-6.col-lg-6 style="text-align:right;"
+                    = social_share_button_tag(@post.title)
         - @post.comments.order("created_at desc").each do |comment|
           .row.comment-floor
             .col-xs-2.col-sm-1.col-md-1.col-lg-1.comment-left

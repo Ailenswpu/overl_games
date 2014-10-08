@@ -8,6 +8,7 @@ $ ->
   $(document).on "click","[data-comemnts-id]", get_post_comemnts_show
   $(document).on "click","#post-frame-bg", iframe_close
   $(document).on "click","#update_post_by_date", post_update_by_date
+  # $(document).on "click","[data-share]", change_sharebox
   post_update_by_date()
 
 get_post_comemnts_show = ->
@@ -112,7 +113,11 @@ post_element_end = ->
   $("#data-next-date").hide()
   $("#end").fadeIn()
 
-
+# change_sharebox = ->
+#   if $("#data-share-box").hide()
+#     $("#data-share-box").fadeIn()
+#   else
+#     $("#data-share-box").fadeOut()
 # $(window).scroll ->
 #   scrollTop = $(this).scrollTop()
 #   winHeight = $(window).clientHeight 

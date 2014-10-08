@@ -16,7 +16,7 @@ vote = ->
       type: 'POST'
       dataType: 'html'  
       error: (jqXHR, textStatus, errorThrown) ->  
-        alert("ajax error")
+        alert("Please login before vote.")
       success: (data, textStatus, jqXHR) -> 
         response_vote("#{data}",id)
 
