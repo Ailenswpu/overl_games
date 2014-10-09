@@ -4,9 +4,9 @@ table.table
     tr
       th Created_at
       th Content
-      th user_id
-      th post_id
-      th control
+      th User_id
+      th Post_id
+      th Control
   tbody
     - @admin_comments.each do |admin_comment|
       tr
@@ -17,6 +17,7 @@ table.table
         td
           a href=admin_comment_path(admin_comment) data-method="delete"  onclick="javascript:confirm('确定要删除吗?')"
             span.fui-cross
+
 
         
 
