@@ -76,9 +76,9 @@
             .col-lg-12
               .comment-title
                 .row
-                  .col-xs-12.col-sm-12.col-md-6.col-lg-6
+                  .col-xs-4.col-sm-6.col-md-6.col-lg-6
                     font Give your opinion
-                  .col-xs-12.col-sm-12.col-md-6.col-lg-6 style="text-align:right;"
+                  .col-xs-8.col-sm-6.col-md-6.col-lg-6 style="text-align:right;"
                     = social_share_button_tag(@post.title)
                     / a.pull-right style="cursor:pointer;" data-share=@post.id
                     /   / | Share&nbsp;
@@ -99,9 +99,9 @@
             .col-lg-12
               .comment-title
                 .row
-                  .col-xs-12.col-sm-12.col-md-6.col-lg-6
+                  .col-xs-4.col-sm-6.col-md-6.col-lg-6
                     font 登录可参与评论
-                  .col-xs-12.col-sm-12.col-md-6.col-lg-6 style="text-align:right;"
+                  .col-xs-8.col-sm-6.col-md-6.col-lg-6 style="text-align:right;"
                     = social_share_button_tag(@post.title)
         - @post.comments.order("created_at desc").each do |comment|
           .row.comment-floor
