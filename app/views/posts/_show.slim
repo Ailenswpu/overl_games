@@ -114,7 +114,7 @@
                   | &nbsp;&nbsp;&nbsp;&nbsp;
                   font = comment.created_at
                   - if current_user
-                    a.pull-right data-comment-id=(comment.id) data-user-id=(comment.user.id) data-user-name=(comment.user.name)
+                    a.pull-right data-comment-id=(comment.id) data-user-id=comment.user.try(:id) data-user-name=comment.user.try(:name)
                       span.fui-bubble
                 p = comment.content.html_safe
               - comment.replies.each do |reply|

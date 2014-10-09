@@ -9,6 +9,7 @@ table.table
       th Category
       th Comments count
       th Votes count
+      th Created_at
       th colspan="3"  Control
   tbody
     - @admin_posts.each do |admin_post|
@@ -21,6 +22,13 @@ table.table
         td= admin_post.category_id
         td= admin_post.comments_count
         td= admin_post.votes_count
-        td= link_to 'Show', admin_post
-        td= link_to 'Edit', edit_admin_post_path(admin_post)
-        td= link_to 'Destroy', admin_post, method: :delete, data:  {confirm: 'Are you sure?'  } 
+        td= admin_post.created_at
+        td
+           a href=post_path(admin_post) target="_blank"
+            span.fui-window
+        td
+          a href=edit_admin_post_path(admin_post) 
+            span.fui-new
+        td
+          a href=admin_post_path(admin_post) data-method="delete"  onclick="javascript:confirm('确定要删除吗?')"
+            span.fui-cross
