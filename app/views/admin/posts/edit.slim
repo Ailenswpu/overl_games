@@ -46,10 +46,7 @@
     label.col-lg-2.control-label  Web(可选)
     .col-lg-9
       = f.input :web, label: false, style: "max-width:40px;", type: "text", input_html: {class: 'form-control'}
-  
   .form-group
-    .col-lg-offset-2.col-lg-10
-      button.btn.btn-primary type="submit"  提交
-  .form-group
-    .col-lg-offset-2.col-lg-10
-      = link_to 'Back', admin_posts_path
+    .col-lg-offset-2.col-lg-9
+      button.btn.btn-primary type="submit"  Submit
+      a.btn.btn-default.pull-right href=admin_posts_path  Back

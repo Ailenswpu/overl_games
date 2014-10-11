@@ -1,0 +1,23 @@
+h6 Comments
+table.table
+  thead
+    tr
+      th Created_at
+      th Content
+      th User_id
+      th Post_id
+      th Control
+  tbody
+    - @admin_comments.each do |admin_comment|
+      tr
+        td= admin_comment.created_at
+        td= admin_comment.content.html_safe
+        td= admin_comment.user_id
+        td= admin_comment.post_id
+        td
+          a href=admin_comment_path(admin_comment) data-method="delete"  onclick="javascript:confirm('确定要删除吗?')"
+            span.fui-cross
+
+
+        
+
