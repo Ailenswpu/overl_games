@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
   namespace :admin do
-    resources :posts, :users
+    resources :posts, :users,:comments
   end
   
   resources :posts

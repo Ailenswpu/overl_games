@@ -6,7 +6,7 @@ table.table
       th Uid
       th Name
       th Created at
-      th colspan="1"  Control
+      / th colspan="1"  Control
   tbody
     - @admin_users.each do |admin_user|
       tr
@@ -16,6 +16,6 @@ table.table
         td= admin_user.created_at
         /td= link_to 'Show', admin_user
         /td= link_to 'Edit', edit_admin_user_path(admin_user)
-        td
-          a href="admin_user" data-method="delete" 
-            span.fui-cross
+        / td
+        /   a href=admin_user_path(admin_user) data-method="delete"  onclick="javascript:confirm('确定要删除吗?')"
+        /     span.fui-cross
