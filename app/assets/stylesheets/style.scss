@@ -188,8 +188,27 @@ ul .dropdown-menu.laguage-ul{
 }
 
 .navbar-right-self{
-	padding: 10px;
 	height: 70px;
+	li{
+		a{
+			font-weight: 100;
+			padding-top: 20px;
+			padding-bottom: 20px;
+			padding-left: 10px;
+			padding-right: 10px;
+			line-height: 30px;
+		}
+
+		ul{
+			li{
+				a{
+					padding-top: 5px;
+					padding-bottom: 5px;
+					line-height: 20px;
+				}
+			}
+		}
+	}
 }
 
 .navbar-left-title{

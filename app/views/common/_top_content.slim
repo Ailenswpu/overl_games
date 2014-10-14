@@ -10,20 +10,18 @@
 
   .navbar-collapse.collapse
     ul.nav.navbar-nav.navbar-right.navbar-right-self
+      li
+        a href=about_path 关于
       - if current_user
-        / li
-        /   a href=new_post_path  分享游戏
+        li
+          a href=new_post_path  分享游戏
         li.dropdown
           a.dropdown-toggle href="#" data-toggle="dropdown" data-user-id=(current_user.id)
             font style="font-size:15px;" = current_user.name
+
             | &nbsp;&nbsp;&nbsp;
             img.top-avatar height="30" width="30" src=(image_url current_user.avatar) 
           ul.dropdown-menu
-            li
-              a href=new_post_path
-                span.fui-plus
-                | &nbsp;&nbsp;分享游戏
-            li.divider
             li
               a href="/sessions/#{current_user.id}"  data-method="delete"
                 span.fui-power
@@ -47,11 +45,7 @@
               a href="https://api.weibo.com/oauth2/authorize?client_id=2181659128&redirect_uri=http://www.overlgames.com/auth/weibo/callback&response_type=code"  
                 img src=(image_url 'third_section/sina.png') width="15" heght="15" style="margin-right:10px;"
                 | Sina
-            li.divider
-            li
-              a href=about_path 
-                span.fui-question-circle
-                | &nbsp;&nbsp;关于我们
+            
             / li
             /   a href="#"  
             /     img src=(image_url 'third_section/facebook.png') width="15" heght="15" style="margin-right:10px;"

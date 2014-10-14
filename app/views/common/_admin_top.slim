@@ -2,17 +2,13 @@
   .container
     .navbar-header
       button.navbar-toggle data-target=".navbar-collapse" data-toggle="collapse" type="button" 
-        span.sr-only Toggle navigation
-      a.navbar-brand href=root_path target="_self"
-        img src=(image_url 'icons/logo-g.png')
+        span.sr-only  Toggle navigation
+      a.navbar-brand href=root_path target="_self" style="margin-top:15px;"  OverlGames
     .navbar-collapse.collapse
-      ul.nav.navbar-nav
+      ul.nav.navbar-nav style="margin-top:10px;"
         li
           a href=admin_users_path  Users
         li
           a href=admin_posts_path  Posts
         li
           a href=admin_comments_path  Comments
-      ul.nav.navbar-nav.navbar-right
-        li
-          a Administrator
