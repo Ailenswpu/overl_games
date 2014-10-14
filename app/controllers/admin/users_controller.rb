@@ -1,5 +1,5 @@
 class Admin::UsersController < ApplicationController
-  http_basic_authenticate_with name: "admin321", password: "admin!@#$1234adminqwert"
+  http_basic_authenticate_with name: 'admin321', password: 'admin!@#$1234adminqwert'
   before_action :set_admin_user, only: [:show, :edit, :update, :destroy]
   layout 'admin'
   # GET /admin/users

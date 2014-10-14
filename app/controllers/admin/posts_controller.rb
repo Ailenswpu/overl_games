@@ -1,5 +1,5 @@
 class Admin::PostsController < ApplicationController
-  http_basic_authenticate_with name: "admin321", password: "admin!@#$1234adminqwert"
+  http_basic_authenticate_with name: 'admin321', password: 'admin!@#$1234adminqwert'
   before_action :set_admin_post, only: [:show, :edit, :update, :destroy]
 
   layout 'admin'
