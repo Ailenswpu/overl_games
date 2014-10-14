@@ -1,23 +1,25 @@
 Rails.application.routes.draw do
   
   namespace :admin do
-    resources :posts, :users,:comments
+    resources :posts, :users, :comments
   end
   
-  resources :posts
+  resources :posts, except: [:update, :edit, :destroy]
   resources :subscriptions
   
   get '/modal_show/:id', to: 'posts#modal_show'
   get '/update_post_by_date', to: 'posts#update_post_by_date'
 
 
-  resources :comments
+  resources :comments, only: [:create]
 
-  resources :replies
+  resources :replies, only: [:create]
 
-  resources :sessions
+  resources :sessions, only: [:create, :destroy]
   
   resources :votes, only: [:create]
+  
+  # resources :users
   
   get '/auth/:provider/callback', to: 'sessions#create'
   
@@ -25,21 +27,18 @@ Rails.application.routes.draw do
 
   get 'home/index' => "home#index",as: "about"
   
-  resources :registrations, only: [:new, :create, :confirmation] do
-    collection do
-      get 'confirmation'
-    end
-  end
+  # resources :registrations, only: [:new, :create, :confirmation] do
+  #   collection do
+  #     get 'confirmation'
+  #   end
+  # end
   
-  resources :passwords do
-    collection do
-      get 'validate_token'
-      get 'reset_password'
-    end
-  end
-
-  
-  resources :users
+  # resources :passwords do
+  #   collection do
+  #     get 'validate_token'
+  #     get 'reset_password'
+  #   end
+  # end
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

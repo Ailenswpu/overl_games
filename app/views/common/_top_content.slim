@@ -37,6 +37,10 @@
       /     li
       /       a href="#"  English
       - if current_user
+        li
+          a href=new_post_path
+            span.fui-plus
+            | &nbsp;&nbsp;分享游戏
         li.dropdown
           a.dropdown-toggle href="#" data-toggle="dropdown" data-user-id=(current_user.id)
             font style="font-size:12px;" = current_user.name
@@ -46,12 +50,12 @@
             li
               a href=new_post_path
                 span.fui-plus
-                | &nbsp;&nbsp;New Game
+                | &nbsp;&nbsp;分享游戏
             / li
             / li.divider
             / li.dropdown-header User Center
             li
-              a href="/sessions/1"  data-method="delete"
+              a href="/sessions/#{current_user.id}"  data-method="delete"
                 span.fui-power
                 | &nbsp;&nbsp;Logout   
       - unless current_user
@@ -80,7 +84,7 @@
                 img src=(image_url 'third_section/qq.png') width="15" heght="15" style="margin-right:10px;"
                 | QQ
             li
-              a href="https://api.weibo.com/oauth2/authorize?client_id=3825053910&redirect_uri=http://www.overlgames.com/auth/weibo/callback&response_type=code"  
+              a href="https://api.weibo.com/oauth2/authorize?client_id=2181659128&redirect_uri=http://www.overlgames.com/auth/weibo/callback&response_type=code"  
                 img src=(image_url 'third_section/sina.png') width="15" heght="15" style="margin-right:10px;"
                 | Sina
             

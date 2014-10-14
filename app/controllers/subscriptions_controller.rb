@@ -5,7 +5,7 @@ class SubscriptionsController < ApplicationController
       flash[:alert] = "恭喜，订阅成功！"
       redirect_to :root
     else
-      flash[:notice] = "请输入正确的邮箱!"
+      flash[:notice] = "您已经订阅过或者邮箱邮箱格式错误!"
       redirect_to :root
     end
   end
