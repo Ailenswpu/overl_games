@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .home_body{
-	margin-bottom: 62px;
+	margin-bottom: 70px;
 }
 
 .home-top{
@@ -38,6 +38,7 @@
 	 // background: none;
      background: url('/assets/icons/jianbian.png') no-repeat;
      background-size: cover;
+     height: 70px;
        a.navbar-brand{
         color: #ddd;
        }
@@ -66,7 +67,7 @@
     }
 
 #home_top_nav{
-  height: 53px;
+  height: 70px;
   width: 100%;
   position: fixed;
   top: 0;

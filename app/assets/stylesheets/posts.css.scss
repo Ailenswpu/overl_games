@@ -89,10 +89,14 @@
 
 .post-index{
 	height: 300px;
+	img{
+		border-radius: 4px;
+	}
 	img:hover{
 		cursor: pointer;
 	}
 	h6{
+		overflow: hidden;
 		width: 100%;
 		word-break:keep-all;
    		white-space:nowrap;
