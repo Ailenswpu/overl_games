@@ -16,24 +16,7 @@
 //= require_tree .
 
 
-// $(document).ready(  
-//     function(){  
-//         document.onkeydown = function()  
-//         {  
-//             var oEvent = window.event;  
-//             if (oEvent.keyCode == 13 && oEvent.ctrlKey) {  
-//                 var control_id = document.activeElement.id;
-//                 alert(control_id);
-//                 switch(control_id) {
-//                 	case "comment-content":
-//                 		new_comment();
-//                 		break;
-//                 	case "current_reply_content":
-//                 		new_reply_content();
-//                 		break;
-//                     default:break;
-//                 }
-//             }  
-//         }  
-//     }  
-// );  
+$(document).ready(function(){
+      var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+      document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F8d3998fdde7f193dfb5aaf8848fcf210' type='text/javascript'%3E%3C/script%3E"));
+    }); 
