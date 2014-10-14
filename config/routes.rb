@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   end
   
   resources :posts, except: [:update, :edit, :destroy]
-  resources :subscriptions
+  resources :subscriptions, only: [:create]
   
   get '/modal_show/:id', to: 'posts#modal_show'
   get '/update_post_by_date', to: 'posts#update_post_by_date'
