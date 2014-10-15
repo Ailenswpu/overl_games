@@ -1,4 +1,4 @@
-= simple_form_for(@admin_post ,:html=> { multipart: true, class: "form-horizontal", role: "form" }) do |f|
+= simple_form_for([:admin, @admin_post] ,:html=> { multipart: true, class: "form-horizontal", role: "form" }) do |f|
   .form-group
     .col-lg-2
     .col-lg-10

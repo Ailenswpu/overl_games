@@ -12,6 +12,7 @@ class Admin::PostsController < ApplicationController
   # GET /admin/posts/1
   # GET /admin/posts/1.json
   def show
+    
   end
 
   # GET /admin/posts/new
@@ -43,15 +44,11 @@ class Admin::PostsController < ApplicationController
   # PATCH/PUT /admin/posts/1
   # PATCH/PUT /admin/posts/1.json
   def update
-    respond_to do |format|
       if @admin_post.update(admin_post_params)
-        format.html { render :index, notice: 'Post was successfully updated.' }
-        format.json { render :index, status: :ok, location: @admin_post }
+        redirect_to admin_posts_path
       else
-        format.html { render :edit }
-        format.json { render json: @admin_post.errors, status: :unprocessable_entity }
+        redirect_to edit_admin_post_path(@admin_post)
       end
-    end
   end
 
   # DELETE /admin/posts/1
@@ -72,6 +69,6 @@ class Admin::PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def admin_post_params
-      params.require(:admin_post).permit(:title, :description, :icon, :user_id, :ios, :android, :windows, :web, :visit, :category_id, :comments_count, :votes_count)
+      params.require(:post).permit(:title, :description, :icon, :user_id, :ios, :android, :windows, :web, :visit, :category_id, :comments_count, :votes_count)
     end
 end
