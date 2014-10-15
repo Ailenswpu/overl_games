@@ -3,82 +3,40 @@
     button.navbar-toggle data-target=".navbar-collapse" data-toggle="collapse" type="button" 
       span.sr-only Toggle navigation
     a.navbar-brand href=root_path target="_self"
-      img src=(image_url 'icons/logo.png')
+      img.logo src=(image_url 'icons/logo-g.png')
+    span.navbar-left-title
+      p.title Overlgames
+      p.content 每日最新游戏,精彩永不停！
+
   .navbar-collapse.collapse
-    / ul.nav.navbar-nav
-    /   li.dropdown
-    /     a.dropdown-toggle data-toggle="dropdown" href="#" 
-    /       | CATEGORIES
-    /       b.caret
-    /     ul.dropdown-menu
-    /       li
-    /         a href="#"  Action
-    /       li
-    /         a href="#"  Another action
-    /       li
-    /         a href="#"  Something else here
-    /       li.divider
-    /       li.dropdown-header Nav header
-    /       li
-    /         a href="#"  Separated link
-    /       li
-    /         a href="#"  One more separated 
-      / li
-      /   a href="#about"  ABOUT
-      / li
-      /   a href="#contact"  CONTACT
-    ul.nav.navbar-nav.navbar-right
-      / li.dropdown
-      /   a.dropdown-toggle href="#" data-toggle="dropdown"
-      /     span.language En
-      /   ul.dropdown-menu
-      /     li
-      /       a href="#"  简体中文
-      /     li
-      /       a href="#"  English
+    ul.nav.navbar-nav.navbar-right.navbar-right-self
+      li
+        a href=about_path 关于
       - if current_user
         li
-          a href=new_post_path
-            span.fui-plus
-            | &nbsp;&nbsp;分享游戏
+          a href=new_post_path  分享游戏
         li.dropdown
           a.dropdown-toggle href="#" data-toggle="dropdown" data-user-id=(current_user.id)
-            font style="font-size:12px;" = current_user.name
+            font style="font-size:15px;" = current_user.name
+
             | &nbsp;&nbsp;&nbsp;
-            img.top-avatar height="22" src=(image_url current_user.avatar) width="22" 
+            img.top-avatar height="30" width="30" src=(image_url current_user.avatar) 
           ul.dropdown-menu
-            li
-              a href=new_post_path
-                span.fui-plus
-                | &nbsp;&nbsp;分享游戏
-            / li
-            / li.divider
-            / li.dropdown-header User Center
             li
               a href="/sessions/#{current_user.id}"  data-method="delete"
                 span.fui-power
-                | &nbsp;&nbsp;Logout   
+                | &nbsp;&nbsp;退出
+            / li.divider
+            / li
+            /   a href=about_path 
+            /     span.fui-question-circle
+            /     | &nbsp;&nbsp;关于我们   
       - unless current_user
-        li
-          a href="https://graph.qq.com/oauth2.0/authorize?response_type=code&client_id=101157953&redirect_uri=http://www.overlgames.com/auth/qq_connect/callback&scope=get_user_info" 
-            img src=(image_url 'temp/QQlogin.png')  height="22"
-        li
-          a href="https://api.weibo.com/oauth2/authorize?client_id=2181659128&redirect_uri=http://www.overlgames.com/auth/weibo/callback&response_type=code" 
-            img src=(image_url 'temp/weibo.png')  height="22"
         li
           a.dropdown-toggle href="#" data-toggle="dropdown" style="font-size:22px;"
             span.fui-plus
-          ul.dropdown-menu
-            li.divider
-            li.dropdown-header.text-center Log in with
-            li
-              a href="#"  
-                img src=(image_url 'third_section/facebook.png') width="15" heght="15" style="margin-right:10px;"
-                | Facebook
-            li
-              a href="#"  
-                img src=(image_url 'third_section/twitter.png') width="15" heght="15" style="margin-right:10px;"
-                | Twitter
+          ul.dropdown-menu style="margin-top:15px;"
+            li.dropdown-header.text-center 登录方式
             li
               a href="https://graph.qq.com/oauth2.0/authorize?response_type=code&client_id=101157953&redirect_uri=http://www.overlgames.com/auth/qq_connect/callback&scope=get_user_info" 
                 img src=(image_url 'third_section/qq.png') width="15" heght="15" style="margin-right:10px;"
@@ -87,4 +45,13 @@
               a href="https://api.weibo.com/oauth2/authorize?client_id=2181659128&redirect_uri=http://www.overlgames.com/auth/weibo/callback&response_type=code"  
                 img src=(image_url 'third_section/sina.png') width="15" heght="15" style="margin-right:10px;"
                 | Sina
+            
+            / li
+            /   a href="#"  
+            /     img src=(image_url 'third_section/facebook.png') width="15" heght="15" style="margin-right:10px;"
+            /     | Facebook
+            / li
+            /   a href="#"  
+            /     img src=(image_url 'third_section/twitter.png') width="15" heght="15" style="margin-right:10px;"
+            /     | Twitter
             
