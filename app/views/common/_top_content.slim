@@ -26,9 +26,10 @@
                 | &nbsp;&nbsp;退出  
       - unless current_user
         li
-          a.dropdown-toggle href="#" data-toggle="dropdown" style="font-size:22px;"
-            span.fui-user 登陆
-          ul.dropdown-menu style="margin-top:15px;"
+          a.dropdown-toggle href="#" data-toggle="dropdown" style="font-size:13px;"
+            span.fui-user style="margin-top:10px;"
+             | 用户登录
+          ul.dropdown-menu style="margin-top:5px;"
             li.dropdown-header.text-center 登录方式
             li
               a href="https://graph.qq.com/oauth2.0/authorize?response_type=code&client_id=101157953&redirect_uri=http://www.overlgames.com/auth/qq_connect/callback&scope=get_user_info" 
