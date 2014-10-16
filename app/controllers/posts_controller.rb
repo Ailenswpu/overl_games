@@ -7,7 +7,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.recent_post(Time.now)
+    @posts = Post.recent_post(Time.now).where(status: 1)
   end
 
   def update_post_by_date
@@ -37,7 +37,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     @post.user = current_user
       if @post.save
-        redirect_to @post 
+        redirect_to posts_path, notice: '你的推荐的游戏提交成功，管理员审核通过后将会发布产品!感谢您的分享'
       else
         render :new
       end

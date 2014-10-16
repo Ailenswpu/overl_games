@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
   
   namespace :admin do
-    resources :posts, :users, :comments
+    resources :posts do
+      member do
+        patch 'review'
+      end
+    end 
+    resources :users, :comments
   end
   
   resources :posts, except: [:update, :edit, :destroy]

@@ -10,6 +10,8 @@ table.table
       th Comments count
       th Votes count
       th Created_at
+      th Status
+      th 审核
       th colspan="3"  Control
   tbody
     - @admin_posts.each do |admin_post|
@@ -23,6 +25,10 @@ table.table
         td= admin_post.comments_count
         td= admin_post.votes_count
         td= admin_post.created_at
+        td= admin_post.status
+        td
+           a href=review_admin_post_path(admin_post) data-method="patch" 
+             span 通过审核
         td
            a href=post_path(admin_post) target="_blank"
             span.fui-window

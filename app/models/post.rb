@@ -21,7 +21,7 @@ class Post < ActiveRecord::Base
         recent_posts = find_by_day(date)
       end
     end
-    return recent_posts || []
+    return recent_posts.nil? ? [] : recent_posts.where(status: 1)
   end
 
   def as_json(options = {})
