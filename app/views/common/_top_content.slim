@@ -6,18 +6,16 @@
       img.logo src=(image_url 'icons/logo-g.png')
     span.navbar-left-title
       p.title Overlgames
-      p.content 每日最新游戏,精彩永不停！
+      p.content Find The Next Big Game!
 
   .navbar-collapse.collapse
     ul.nav.navbar-nav.navbar-right.navbar-right-self
-      li
-        a href=about_path 关于
       - if current_user
         li
-          a href=new_post_path  分享游戏
+          a.fui-plus href=new_post_path  分享游戏
         li.dropdown
           a.dropdown-toggle href="#" data-toggle="dropdown" data-user-id=(current_user.id)
-            font style="font-size:15px;" = current_user.name
+            font style="font-size:15px;font-family:'Arial';" = current_user.name
 
             | &nbsp;&nbsp;&nbsp;
             img.top-avatar height="30" width="30" src=(image_url current_user.avatar) 
@@ -25,16 +23,11 @@
             li
               a href="/sessions/#{current_user.id}"  data-method="delete"
                 span.fui-power
-                | &nbsp;&nbsp;退出
-            / li.divider
-            / li
-            /   a href=about_path 
-            /     span.fui-question-circle
-            /     | &nbsp;&nbsp;关于我们   
+                | &nbsp;&nbsp;退出  
       - unless current_user
         li
           a.dropdown-toggle href="#" data-toggle="dropdown" style="font-size:22px;"
-            span.fui-plus
+            span.fui-user 登陆
           ul.dropdown-menu style="margin-top:15px;"
             li.dropdown-header.text-center 登录方式
             li

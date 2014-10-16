@@ -1,233 +1,236 @@
 
 .comon_body {
-        padding-top: 90px;
-        background: #e9edf0;
-        margin-bottom: 62px;
-        font-family: 'Lato';
-     }
+  padding-top: 90px;
+  background: #e9edf0;
+  margin-bottom: 62px;
+  font-family: 'Lato';
+}
 
 html{
-	position: relative;
-  	min-height: 100%;
-  	font-family: 'Lato';
+  position: relative;
+  min-height: 100%;
+  font-family: 'Lato';
 }
 
 
 .nav-game{
-	border-bottom: #34495e 2px solid;
-	height: 70px;
+  border-bottom: #34495e 2px solid;
+  height: 70px;
 }
 
 .img-middle{
-	width: 40px;
-	height: 40px;
+  width: 40px;
+  height: 40px;
 }
 
 
 .top-avatar{
-	border-radius: 20px;
+  border-radius: 20px;
 }
 
 
 .share-circle{
-	width: 36px;
-	height: 36px;
-	padding: 10px;
-	text-align: center;
-/*	border-radius: 30px;
-	float: left;
-	color: #FFFFFF;
-	margin-right: 15px;
-	margin-bottom: 5px;*/
-	font-size: 22px;
+  width: 36px;
+  height: 36px;
+  padding: 10px;
+  text-align: center;
+  /*	border-radius: 30px;
+  float: left;
+  color: #FFFFFF;
+  margin-right: 15px;
+  margin-bottom: 5px;*/
+  font-size: 22px;
 }
 
 /*.share-circle:hover{
-	background: #FFFFFF !important;
-	color: #34495e;
+background: #FFFFFF !important;
+color: #34495e;
 }*/
 
 .introduction-brief{
-	width: 100%;
-	background: #ffffff;
-	background-size: 100%;
-	height: 303px;
-	text-align: center;
-	overflow: hidden;
-	padding: 20px;
-	font-family: "微软雅黑";
+  width: 100%;
+  background: #ffffff;
+  background-size: 100%;
+  height: 303px;
+  text-align: center;
+  overflow: hidden;
+  padding: 20px;
+  font-family: "微软雅黑";
 
 }
 
 
 .introduction-box{
-	text-align: center;
+  text-align: center;
 }
 
 
 .introduction-img{
-	/*line-height: 303px;*/
-	height: 303px;
-	color: #FFFFFF;
-	padding-top: 50px;
-	padding-bottom: 50px;
-	text-align: center;
+  /*line-height: 303px;*/
+  height: 303px;
+  color: #FFFFFF;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  text-align: center;
 	
 }
 
 
 
 .page{
-	margin-top: 20px;
-	min-height: 100px;
-	background: #FFFFFF;
+  margin-top: 20px;
+  min-height: 100px;
+  background: #FFFFFF;
 }
 
 .text-area{
-	padding: 20px;
-	font-family: "微软雅黑";
+  padding: 20px;
+  font-family: "微软雅黑";
 }
 
 .rating-table{
-	padding-bottom: 0px;
-	margin-bottom: 0px;
+  padding-bottom: 0px;
+  margin-bottom: 0px;
 }
 
 
 .rating-table tr{
-	border-top: 0px;
-	padding-bottom: 0px;
+  border-top: 0px;
+  padding-bottom: 0px;
 }
 
 .rating-table tr th{
-	width: 100px;
-	text-align: right;
-	border-top: 0px !important;
-	padding-bottom: 0px;
-	font-size: 14px;
+  width: 100px;
+  text-align: right;
+  border-top: 0px !important;
+  padding-bottom: 0px;
+  font-size: 14px;
 }
 
 .rating-table tr td{
-	border-top: 0px !important;
+  border-top: 0px !important;
 }
 
 .video{
-	width: 100%;
-	height: 304px;
-	background: #000;
+  width: 100%;
+  height: 304px;
+  background: #000;
 }
 
 .cusp{
-	border-radius: 0px !important;
-	font-family: "微软雅黑";
+  border-radius: 0px !important;
+  font-family: "微软雅黑";
 }
 
 .black-bg{
-	background: #111;
+  background: #111;
 }
 
 .white-bg{
-	background: #FFFFFF;
+  background: #FFFFFF;
 }
 
 .white-color{
-	color: #ffffff;
+  color: #ffffff;
 }
 
 .text-center{
-	text-align: center;
-	font-family: "微软雅黑"；
+  text-align: center;
+  font-family: "微软雅黑"；
 }
 
 .tran-bg{
-	background: none !important;
-	overflow: hidden;
+  background: none !important;
+  overflow: hidden;
 }
 
 .banner{
-	background:url(../img/pic/banner.jpg) no-repeat;
-	background-size: 100%;
-	padding: 20px;
-	width: 100%;
-	height: auto;
-	background: none;
-	/*background: #ffffff;*/
+  background:url(../img/pic/banner.jpg) no-repeat;
+  background-size: 100%;
+  padding: 20px;
+  width: 100%;
+  height: auto;
+  background: none;
+  /*background: #ffffff;*/
 }
 
 .home-floor{
-	margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .floot-title{
-	font-size: 14px;
-	text-align: center;
-	font-family: "微软雅黑";
-	border-bottom: #FFFFFF 2px dashed;
-	padding-bottom: 10px;
-	margin-bottom: 20px;
+  font-size: 14px;
+  text-align: center;
+  font-family: "微软雅黑";
+  border-bottom: #FFFFFF 2px dashed;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .fui-power:hover{
-	color: #e74c3c;
+  color: #e74c3c;
 }
 
 .label-language{
-	background: #34495e;
-	margin-top: 20px;
-	line-height: 22px;
-	border-radius: 10px;
+  background: #34495e;
+  margin-top: 20px;
+  line-height: 22px;
+  border-radius: 10px;
 }
 
 .language{
-	margin: 15px;
+  margin: 15px;
 }
 
 ul .dropdown-menu.laguage-ul{
-	margin-top:-140px;
-	border:#34495e 2px solid;
+  margin-top:-140px;
+  border:#34495e 2px solid;
 }
 
 .navbar-right-self{
-	height: 70px;
-	li{
-		a{
-			font-weight: 100;
-			padding-top: 20px;
-			padding-bottom: 20px;
-			padding-left: 10px;
-			padding-right: 10px;
-			line-height: 30px;
-		}
+  height: 70px;
+  li{
+    a{
+      font-weight: 100;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      padding-left: 10px;
+      padding-right: 10px;
+      line-height: 30px;
+      fonf-family:'Arial Rounded MT Bold';
+    }
 
-		ul{
-			li{
-				a{
-					padding-top: 5px;
-					padding-bottom: 5px;
-					line-height: 20px;
-				}
-			}
-		}
-	}
+    ul{
+      li{
+        a{
+          padding-top: 5px;
+          padding-bottom: 5px;
+          line-height: 20px;
+        }
+      }
+    }
+  }
 }
 
 .navbar-left-title{
-	float: left;
-	padding-top: 4px;
-	p.title{
-		font-size: 23px;
-		margin: 0px;
-		padding: 0px;
-	}
-	p.content{
-		font-size: 12px;
-		color: gray;
-		margin: 0px;
-		padding: 0px;
-		margin-top: -3px;
-	}
+  float: left;
+  padding-top: 4px;
+  p.title{
+    font-size: 23px;
+    margin: 0px;
+    padding: 0px;
+    font-family:'Arial Rounded MT Bold';
+  }
+  p.content{
+    font-size: 12px;
+    color: gray;
+    margin: 0px;
+    padding: 0px;
+    margin-top: -3px;
+    font-family:'Arial Rounded MT Bold';
+  }
 }
 
 .logo{
-	width:50px;height:50xp;border-radius:4px;
+  width:50px;height:50xp;border-radius:4px;
 }

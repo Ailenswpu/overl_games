@@ -36,15 +36,11 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.user = current_user
-    respond_to do |format|
       if @post.save
-        format.html { redirect_to @post }
-        format.json { render :show, status: :created, location: @post }
+        redirect_to @post 
       else
-        format.html { render :new }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
+        render :new
       end
-    end
   end
 
   # PATCH/PUT /posts/1
