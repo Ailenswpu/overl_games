@@ -12,7 +12,7 @@
     ul.nav.navbar-nav.navbar-right.navbar-right-self
       - if current_user
         li
-          a.fui-plus href=new_post_path  分享游戏
+          a.fui-plus style="padding-top:28px;font-size:14px;" href=new_post_path  分享游戏
         li.dropdown
           a.dropdown-toggle href="#" data-toggle="dropdown" data-user-id=(current_user.id)
             font style="font-size:15px;font-family:'Arial';" = current_user.name

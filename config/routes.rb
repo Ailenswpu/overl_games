@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   
   root "posts#index"
 
-  get 'home/index' => "home#index",as: "about"
+  get '/about' => "home#index"
   
   # resources :registrations, only: [:new, :create, :confirmation] do
   #   collection do
