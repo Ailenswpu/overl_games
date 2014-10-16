@@ -1,12 +1,12 @@
 class Admin::PostsController < ApplicationController
   http_basic_authenticate_with name: 'admin321', password: 'admin!@#$1234adminqwert'
-  before_action :set_admin_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_admin_post, only: [:show, :edit, :update, :destroy, :review]
 
   layout 'admin'
   # GET /admin/posts
   # GET /admin/posts.json
   def index
-    @admin_posts = Post.all
+    @admin_posts = Post.all.order(created_at: :desc)
   end
 
   # GET /admin/posts/1
@@ -44,11 +44,16 @@ class Admin::PostsController < ApplicationController
   # PATCH/PUT /admin/posts/1
   # PATCH/PUT /admin/posts/1.json
   def update
-      if @admin_post.update(admin_post_params)
-        redirect_to admin_posts_path
-      else
-        redirect_to edit_admin_post_path(@admin_post)
-      end
+    if @admin_post.update(admin_post_params)
+      redirect_to admin_posts_path
+    else
+      redirect_to edit_admin_post_path(@admin_post)
+    end
+  end
+  
+  def review
+    @admin_post.update_attributes(status: 1)
+    redirect_to admin_posts_path
   end
 
   # DELETE /admin/posts/1
@@ -62,13 +67,13 @@ class Admin::PostsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_admin_post
-      @admin_post = Post.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_admin_post
+    @admin_post = Post.find(params[:id])
+  end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def admin_post_params
-      params.require(:post).permit(:title, :description, :icon, :user_id, :ios, :android, :windows, :web, :visit, :category_id, :comments_count, :votes_count)
-    end
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def admin_post_params
+    params.require(:post).permit(:title, :description, :icon, :user_id, :ios, :android, :windows, :web, :visit, :category_id, :comments_count, :votes_count)
+  end
 end
