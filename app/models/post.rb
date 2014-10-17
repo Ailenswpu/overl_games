@@ -3,7 +3,7 @@ class Post < ActiveRecord::Base
   validates_attachment_content_type :icon, :content_type => /\Aimage\/.*\Z/
   validates_presence_of :icon, :title, :description, :category
   validates_format_of :ios, :android, :windows, :web, with: /https?:\/\/[\S]+/, allow_nil: true, allow_blank: true, message: "请输入正确的url格式"
-  validates_length_of :description, maximum: 400, message: "请输入小于400字符的描述"
+  validates_length_of :description, maximum: 200, message: "请输入小于100个汉字的描述"
   validates_uniqueness_of :title, :android, :ios, :windows, :web, allow_nil: true, allow_blank: true,
   message: "该游戏已经存在"
   scope :find_by_day, -> (date) {where('created_at >= ? and created_at <= ?', date.at_beginning_of_day, date.at_end_of_day)}
